@@ -1,0 +1,156 @@
+/* General Styling */
+body {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+body::before {
+    top: 10%;
+    left: 5%;
+    transform: rotate(20deg);
+}
+
+body::after {
+    top: 70%;
+    left: 60%;
+    transform: rotate(-15deg);
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 0px 20px;
+    background-color: #000;
+    color: #4F378B;
+}
+
+.header-image img {
+    width: 60px;
+}
+
+.header-buttons button {
+    background-color: #4F378B;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.header-buttons button:hover {
+    background-color: #6c4fa3;
+    transform: scale(1.05);
+}
+
+/* Box Styling */
+.box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.title {
+    font-size: 1.8rem;
+    color: #f5f5f5;
+}
+
+/* Image Box */
+.image-box_1, .image-box_2 {
+    position: relative;
+    width: 40%; /* Adjusted to make the circle bigger */
+    height: 40%; /* Adjusted to make the circle bigger */
+    margin: 20px 20px;
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align buttons below circles vertically */
+    transition: transform 0.2s ease;
+}
+
+/* Circular Buttons */
+.button-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 111px;
+}
+
+.circle-button {
+    background-color: #4F378B;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.circle-button:hover {
+    background-color: #6c4fa3;
+    transform: scale(1.05);
+}
+
+/* New CSS for circles with images */
+.options {
+    display: flex;
+    justify-content: center; /* Aligns elements horizontally */
+    margin-top: 20px; /* Additional spacing */
+}
+
+.circle {
+    width: 50%; /* Increased size for better visibility */
+    height: 50%; /* Increased size for better visibility */
+    display: flex;
+    border-radius: 50%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-image img {
+        width: 50px;
+    }
+
+    .image-box_1, .image-box_2 {
+        width: 70%;
+        height: auto;
+    }
+
+    .circle-button {
+        width: 45px;
+        height: 45px;
+        font-size: 12px;
+    }
+}
