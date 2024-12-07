@@ -75,14 +75,14 @@ body::after {
 /* Image Box */
 .image-box_1, .image-box_2 {
     position: relative;
-    width: 40%; /* Adjusted to make the circle bigger */
-    height: 40%; /* Adjusted to make the circle bigger */
+    width: 40%;
+    height: 40%;
     margin: 20px 20px;
     overflow: hidden;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Align buttons below circles vertically */
+    align-items: center;
     transition: transform 0.2s ease;
 }
 
@@ -110,16 +110,15 @@ body::after {
     transform: scale(1.05);
 }
 
-/* New CSS for circles with images */
 .options {
     display: flex;
-    justify-content: center; /* Aligns elements horizontally */
-    margin-top: 20px; /* Additional spacing */
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .circle {
-    width: 50%; /* Increased size for better visibility */
-    height: 50%; /* Increased size for better visibility */
+    width: 50%;
+    height: 50%;
     display: flex;
     border-radius: 50%;
     margin: 20px auto;
