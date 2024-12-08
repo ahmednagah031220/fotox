@@ -1,0 +1,321 @@
+body {
+    background: #000 !important;
+    color: #ffffff !important;
+    margin: 0;
+    padding: 0;
+    font-family: "Lustria", serif;
+}
+
+.container {
+    background: #000;
+    border-color: #000;
+}
+/* Header Styling */
+.header {
+    background-color: #000;
+    color: #4F378B;
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 3% 0% 2%;
+    align-items: center;
+    height:50px;
+}
+.header-image img {
+    width: 15%;
+    height: 100%;
+    padding-top: 3%;
+    transition: ease 0.6s;
+    margin-top: 20px;
+}
+.header-image img:hover{
+    transform: scale(1.1);
+}
+#title-text {
+    font-size: 55px;
+    margin-top:57px;
+    margin-bottom: 30px;
+    font-family: 'DM Serif Display', 'serif';
+    margin-bottom: -90px;
+}
+.header button{
+    border-radius: 5em;
+    font-family: 'DM Serif Display', 'serif';
+    background-color: #4F378B;
+    color: #ffffff;
+    width: 8em;
+    height: 3em;
+    border-radius: 4em;
+    font-size: 13px;
+    border: none;
+    transition: ease 0.6s;
+    margin-top: 25px;
+}
+.header button:hover {
+    background-color: #9d88dd;
+    transform: scale(1.1);
+}
+/* Input Box Container Styling */
+.input-box-container {
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    background-color: white;
+    padding: 5px;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 15px;
+    margin-top:15px;
+}
+
+.input-box-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    color: #000;
+    background-color: transparent;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+
+.input-box-container button {
+    height: 100%;
+    font-family: "DM Serif Text", serif;
+    background-color: #4F378B;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right:2px;
+    margin-left:2px;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.input-box-container button:hover {
+    background-color: #8c75d1;
+    transform: scale(1.05);
+}
+
+
+.input-box-container #btn-img {
+    display: block;
+    float: right;
+    width: 120px;
+    height: 40px; 
+    background-color: #4F378B;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-right: 5px; 
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+
+.input-box-container #crystal {
+    width: 50px;
+    height: 40px;
+    background-color: #4F378B;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.input-box-container #crystal:hover {
+    background: "generate";
+}
+.input-box-container #crystal i {
+    font-size: 18px; 
+    color: #fff;
+    text-align: center;
+}
+
+
+/* Dropdown content container (hidden by default) */
+.dropdown-content {
+    margin-top: 20px;
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: black;
+    border: #4F378B 10px;
+    min-width: 160px;
+    border-radius: 5px;
+    z-index: 1;
+    margin-top: 55px;
+}
+
+/* Links inside dropdown */
+.dropdown-content a {
+    color: #ffffff;
+    border-radius: 50px;
+    background-color: "#4F378B";
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+/* Hover effect for links */
+.dropdown-content a:hover {
+    background-color: #8c75d1;
+    color: white;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown */
+}
+
+
+/* upload Box Container Styling */
+.upload-box-container {
+    border-radius: 100px;
+    background-color: white;
+    padding: 5px;
+    width: 200px;
+    height: 50px;
+    float:right;
+}
+
+
+.upload-box-container button {
+    
+    height: 100%;
+    font-family: "DM Serif Text", serif;
+    background-color: #4F378B;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-right:2px;
+    margin-left:2px;
+}
+
+.upload-box-container button:hover {
+    background-color: #8c75d1;
+    transform: scale(1.05);
+}
+
+
+.upload-box-container #btn-upload{
+    display: block;
+    float: right;
+    width: 130px; /* Smaller button width */
+    height: 40px; /* Adjust height */
+    background-color: #4F378B;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-right: 5px; /* Adds spacing between button and input */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.upload-box-container #upload-icon {
+    width: 55px; /* Smaller width for the icon button */
+    height: 40px;
+    background-color: #4F378B;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-box-container #upload-icon i {
+    font-size: 18px; 
+    color: #fff;
+    text-align: center;
+}
+/* ID Container Styling */
+.id-container {
+    grid-column: 2/3; /* Second column */
+    grid-row: 2/3; /* Second row of the second column */
+    justify-self: start;
+    justify-content: space-between; 
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    background-color: white;
+    padding: 5px;
+    width: 300px; /* Adjusted width to fit the input field and button */
+    height: 50px;
+    float:right;
+}
+
+/* Style for the Button in ID Container */
+.id-container button {
+    height: 100%;
+    font-family: "DM Serif Text", serif;
+    background-color: #4F378B;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-left:2px;
+}
+
+.id-container button:hover {
+    background-color: #8c75d1;
+    transform: scale(1.05);
+}
+
+/* Style for the Input Field in ID Container */
+.id-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    color: #000;
+    background-color: transparent;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+/* Placeholder styling for ID Container Input */
+.id-container input::placeholder {
+    color: #96949F;
+    font-style: italic;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+
+/* Styling for the adjacent image */
+.box-image {
+    align-self: center;
+    padding: 0%;
+    transition: transform 0.3s ease;
+}
+.box-image img {
+    width: 115%;
+    height: 115%;
+    transition: transform 0.3s ease;
+}
+
