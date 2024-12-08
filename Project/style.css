@@ -1,0 +1,410 @@
+/* General Styling */
+body {
+    background-color: #000;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: "Lustria", serif;
+}
+
+/* Header Styling */
+.header {
+    background-color: #000;
+    color: #4F378B;
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 3% 0% 2%;
+    align-items: center;
+    height:50px;
+}
+.header-image img {
+    width: 15%;
+    height: 100%;
+    padding-top: 3%;
+    transition: ease 0.6s;
+}
+.header-image img:hover{
+    transform: scale(1.1);
+}
+.header-buttons {
+    display: inline-flex;
+    gap: 10px;
+    transition: ease 0.6s;
+
+}
+.header button {
+    background-color: #4F378B;
+    color: #ffffff;
+    width: 8em;
+    height: 3em;
+    border-radius: 4em;
+    font-size: 12px;
+    border: none;
+    transition: ease 0.6s;
+}
+/* Hover effect for header buttons */
+.header button:hover {
+    background-color: #8c75d1;
+    transform: scale(1.1);
+}
+#sign-header {
+    background-color: #000;
+    color: #4F378B;
+    font-size: 12px;
+    transition: ease 0.6s;
+}
+#sign-header:hover{
+    background-color: #b889de;
+    transform: scale(1.1);
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////// */
+
+/* Box Styling */
+.box {
+    color: #ffffff;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: font-size 0.3s ease;
+}
+.box-text-button {
+    display:inline-flex;
+    align-items: center;
+    transition: padding 0.3s ease, width 0.3s ease;
+    font-family: 'Times New Roman', Times, serif;
+}
+.box-text-button p {
+    font-size:95%;
+    margin-top:0;
+    margin-bottom: 30px;
+}
+.box-button {
+    background-color: #4F378B;
+    color: #ffffff;
+    width: 8em;
+    height: 2.1em;
+    border-radius: 4em;
+    font-size: 35%;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    transition: ease 0.6s;
+}
+.box-button:hover {
+    background-color: #8c75d1;
+    transform: scale(1.1);
+}
+.fa-solid {
+    margin-left:12px;
+}
+.box-image {
+    width: 90%;
+    padding: 0%;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+.box-image img {
+    width: 85%;
+    height: 85%;
+    float: right;
+    transition: transform 0.3s ease;
+    padding-right:10%;
+}
+
+/* Wrapper Styling */
+.wrapper {
+    font-family:'Noto Rashi Hebrew';
+    position: relative;
+    height:500px;
+    width: 400px;
+    background: transparent;
+    border: 0.01em solid #514e4e;
+    border-radius: 0.3em;
+    margin: 2% 3% 2% 9%;
+    padding: 3% 6% 3% 6%;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    transition: ease 0.6s;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgb(69, 68, 68) inset;
+}   
+.wrapper:hover{
+    transform: scale(1.05);
+}
+/* Initially hide login and signup forms */
+#login-form, #signup-form, #forgot-password-form {
+    display: none;
+}
+
+
+/* Form Box Styling */
+.form-box {
+    width: 100%;
+}
+.input-box input {
+    position: relative;
+    width: 100%;   
+    height: 33px;
+    border: 1px solid rgb(137, 137, 137);
+    border-radius: 0.5em;
+    background-color: transparent;
+    margin:0;
+    color: #fff;
+}
+.input-box input[placeholder] {
+    padding-left: 10px;
+    color: #fff;
+    font-family:'Noto Rashi Hebrew';
+}
+.input-box {
+    margin-top:-15px;
+}
+#toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(-95px, -113px);
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Remember me / Forgot password section */
+.remember-forgot {
+    font-size: 0.2em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding-top:2%;
+}
+input[type=checkbox] {
+    accent-color: #4F378B;
+    padding-top:5px;
+}
+
+.remember-forgot a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: -10px;
+    margin-top:2%;
+}
+.remember-forgot a:hover {
+    color: #4F378B;
+}
+
+/* Button Styling */
+.btn {
+    width: 100%;
+    height: 37px;
+    background: linear-gradient(to right, transparent, #4F378B, transparent);
+    border: none;
+    border-color: #fff;
+    border-radius: 0.3em;
+    outline: none;
+    font-size: 50%;
+    color: #fff;
+    transition: ease 0.5s;
+}
+.btn:hover{
+    background-color: #8c75d1;
+    transform: scale(1.1);
+}
+
+/* Or Section Styling */
+.or {
+    display: flex;
+    padding-top: 3%;
+}
+.or h6 {
+    padding-right: 8px;
+    margin: 0;
+    padding: 2% 5% 0% 5%;
+    font-size: 10px;
+    color: #514e4e;
+}
+.or:before, .or:after {
+    display: inline-block;
+    content: "";
+    border-top: .005em solid #514e4e;
+    width: 100%;
+    margin: 0;
+    transform: translateY(50%);
+}
+
+/* Other login options section */
+.other-logs {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-top: 5%;
+    gap: 10px;
+}
+/* Login-Register section */
+.login-register {
+    font-size: 1em;
+    color: #fff;
+    margin-top: 2%;
+    text-align: center;
+    font-weight: 500;
+    padding:0;
+}
+.login-register p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 120;
+}
+.login-register p a:hover {
+    text-decoration: none;
+    color: #4F378B;
+    font-weight: 700;
+}
+
+/* Form Text */
+.form-box p {
+    margin: 0;
+    font-size: 20%;
+}
+.form-box button {
+    margin: 0;
+    font-size: 30%;
+}
+
+/* Form Box Header */
+.wrapper h2 {
+    margin-bottom: 2%;
+    color: #fff;
+    font-size: 53%;
+    padding-top:0;
+    margin-top:0;
+    font-weight: 120;
+}
+.animate__animated.animate__fadeInLeft {
+    --animate-duration: 2s;
+}
+.animate__animated.animate__fadeInRight{
+    --animate-duration: 2s;
+}
+
+
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1200px) {
+    .box {
+        flex-direction: column;
+        align-items: center;
+        font-size: 40px;
+    }
+
+    .box-text-button {
+        width: 100%;
+        text-align: center;
+        padding:5%;
+    }
+    .box p{
+        padding:5%;
+    }
+    .box-image {
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .header-buttons {
+        padding-left: 0;
+        width: 100%;
+        justify-content: right;
+        margin-top: 10px;
+    }
+
+    .header {
+        flex-direction: row;
+        align-items: center;
+        padding: 5%;
+    }
+
+    .header-image {
+        margin-left: 0;
+        padding-top: 0;
+    }
+
+    .header button {
+        width: 6em;
+        height: 2.5em;
+        font-size: 10px;
+    }
+
+    .box button {
+        width: 6em;
+        height: 2.5em;
+        font-size: 35%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .box {
+        font-size: 30px;
+    }
+
+    .box-text-button {
+        width: 100%;
+        font-size: 25px;
+    }
+
+    .header-image img {
+        width: 10%;
+        height: 10%;
+    }
+
+    .box button {
+        width: 7em;
+        height: 2.5em;
+        font-size: 30%;
+    }
+
+    .header button {
+        width: 7em;
+        height: 2.5em;
+        font-size: 9px;
+    }
+
+    .box-image img {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .box {
+        font-size: 24px;
+    }
+
+    .box-text-button {
+        width: 70%;
+        font-size: 20px;
+    }
+
+    .box button {
+        width: 6em;
+        height: 2.5em;
+        font-size: 25%;
+    }
+
+    .header button {
+        width: 5em;
+        height: 2em;
+        font-size: 8px;
+    }
+
+    .header-image img {
+        width: 15%;
+        height: 15%;
+    }
+
+    .header-buttons {
+        justify-content: center;
+        padding-top: 10px;
+    }
+
+    .box-image img {
+        width: 85%;
+    }
+}
