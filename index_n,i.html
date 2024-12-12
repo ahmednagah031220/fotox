@@ -6,15 +6,21 @@
         <title>Fotox</title>
         <link rel="stylesheet" href="style_n,i.css">
     </head>
-    <body>
+
+    <header>
         <div class="header">
             <div class="header-image">
-                <img src="./asset/img/logo.JPEG" alt="Logo">
+                <a href="index.html">
+                    <img href="fotox.html" src="./asset/img/logo.JPEG" alt="Logo">
+                </a>
             </div>
-            <div class="header-buttons">
-                <button type="submit">Logout</button>
+            <div class="logout-btn">
+                <button type="button" class="btn" id="logout" onclick="window.location.href='index.html'">Log out</button>
             </div>
         </div>
+    </header>
+
+    <body>
         <div class="box">
             <h1 class="title">Welcome to Fotox Free AI Image Generator</h1>
             <h2 class="title">Choose what type of image to generate</h2>
@@ -23,15 +29,24 @@
                     <div class="circle">
                         <img src="./asset/img/IMG-20241201-WA0004.jpg" alt="Circle Image">
                     </div>
-                    <button class="circle-button" onclick="window.location.href='index_i.html'">Imaginary</button>
+                    <button class="circle-button" onclick="sendFlag(0)">Imaginary</button>
                 </div>
                 <div class="image-box_2">
                     <div class="circle">
                         <img src="./asset/img/IMG-20241201-WA0003.jpg" alt="Circle Image">
                     </div>
-                    <button class="circle-button" onclick="window.location.href='index_n.html'">Human</button>
+                    <button class="circle-button" onclick="sendFlag(1)">Human</button>
                 </div>
             </div>
         </div>
+        <script>
+        function sendFlag(flag) {
+            // Store the flag in local storage
+            localStorage.setItem('flag', flag);
+
+            // Redirect to the second page
+            window.location.href = 'fotox.html';
+        }
+        </script>
     </body>
 </html>

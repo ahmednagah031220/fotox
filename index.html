@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fotox</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lustria&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://fonts.googleapis.com/css?family=Noto Rashi Hebrew' rel='stylesheet'>
+
+</head>
+<header>
+    <div class="header">
+        <div class="header-image">
+            <a href="index.html">
+                <img src="./asset/img/logo.JPEG" alt="Logo">
+            </a>
+        </div>
+        <div class="header-buttons">
+            <button type="button" id="sign-header">Sign in</button> <!-- Sign in button -->
+            <button type="button" id="get-started">Get Started</button> <!-- Get Started button -->
+        </div>
+    </div>
+</header>
+<body>
+    <div class="box">
+
+        <div class="wrapper  animate__animated animate__fadeInLeft" id="wrapper">
+            <!-- Starter Page -->
+            <div class="box-text-button" id="starter-page">
+                <form>
+                    <p>Free AI Image<br>Generator:<br>Text to Image</p>
+                    <button type="button" class="box-button" id="first-signin">Sign in<i class="fa-solid fa-arrow-right fa-2xs" style="color: #ffffff;"></i></button>
+                </form>
+            </div>
+            <!-- Login Form -->
+            <div class="form-box login" id="login-form">
+                <h2>Login</h2>
+                <p>Glad you're Back!</p>
+                <form action="#">
+                    <div class="input-box">
+                        <input type="email" placeholder="Username" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="password" placeholder="Password"  required>
+                        <i class="fa-solid fa-eye" id="toggle-password" style="cursor: pointer;"></i>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox" class="check"> Remember me</label>
+                        <a href="#" class="register-link" id="to-forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn" onclick="window.location.href='index_n,i.html'">Login</button>
+                    <div class="or">
+                        <h6>  Or  </h6>
+                    </div>
+                    <div class="other-logs">
+                        <a href="#"><i class="fa-brands fa-google fa-2xs"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook fa-2xs" style="color: #3477ea;"></i></a>
+                        <a href="#"><i class="fa-brands fa-github fa-2xs" style="color: #ffffff;"></i></a>
+                    </div>
+                    <div class="login-register">
+                        <p>Don't have an account? <a href="#" class="register-link" id="to-signup">Signup</a></p>
+                    </div>
+                </form>
+            </div>
+            <!-- Register Form -->
+            <div class="form-box register" id="signup-form">
+                <h2>Signup</h2>
+                <p>Just some details to get you in!</p>
+                <form action="#">
+                    <div class="input-box">
+                        <input type="email" placeholder="Username" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" placeholder="Email / Phone" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="btn" onclick="window.location.href='index_n,i.html'">Signup</button>
+                    <div class="or">
+                        <h6>  Or  </h6>
+                    </div>
+                    <div class="other-logs">
+                        <a href="#"><i class="fa-brands fa-google fa-2xs"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook fa-2xs" style="color: #3477ea;"></i></a>
+                        <a href="#"><i class="fa-brands fa-github fa-2xs" style="color: #ffffff;"></i></a>
+                    </div>
+
+                    <div class="login-register">
+                        <p>Already registered? <a href="#" class="register-link" id="to-login">Login</a></p>
+                    </div>
+                </form>
+            </div>
+            <!-- Forgot Password Form -->
+            <div class="form-box forgot-password" id="forgot-password-form">
+                <h2>Forgot Password?</h2>
+                <p>Please enter your email here</p>
+                <form action="#">
+                    <div class="input-box">
+                        <input type="email" placeholder="fotox@example.com" required>
+                    </div>
+                    <button type="submit" class="btn">Reset Password</button>
+                    <div class="login-register">
+                        <p>Don't have an account? <a href="#" class="register-link" id="to-signupforgot">Signup</a></p>   
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="box-image">
+            <img src="./asset/img/Collected_3_photos.png" height="100%" alt="AI Images" id="triple-image"class="animate__animated animate__fadeInRight ">
+        </div>
+    </div>
+
+    <!-- Link the JS file -->
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>
