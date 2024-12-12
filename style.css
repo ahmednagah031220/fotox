@@ -1,199 +1,408 @@
+
+/* General Styling */
 body {
-    background-color: #000;
+    background-color: #000 !important;
     color: #ffffff;
     margin: 0;
     padding: 0;
+    font-family: "Lustria", serif;
 }
 
 /* Header Styling */
 .header {
     background-color: #000;
     color: #4F378B;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
     justify-content: space-between;
-    padding: 3% 3% 0% 3%;
+    padding: 2.5% 3% 5% 2%;
+    align-items: center;
+    height: 50px;
 }
-
 .header-image img {
-    width: 15%;
-    height: 90%;
+    width: 5%;
+    height: auto;
+    padding-top: 3%;
+    transition: ease 0.6s;
 }
-
+.header-image img:hover {
+    transform: scale(1.1);
+}
 .header-buttons {
-    display: flex;
-    gap: 17px;
+    display: inline-flex;
+    gap: 10px;
+    transition: ease 0.6s;
 }
-
 .header button {
     background-color: #4F378B;
     color: #ffffff;
     width: 8em;
     height: 3em;
     border-radius: 4em;
-    font-size: 11px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
     border: none;
+    transition: ease 0.6s;
+}
+.header button:hover {
+    background-color: #8c75d1 !important;
+    transform: scale(1.1);
+}
+#sign-header {
+    background-color: #000;
+    color: #4F378B;
+    font-size: 12px;
+    transition: ease 0.6s;
+}
+#sign-header:hover {
+    background-color: #b889de;
+    transform: scale(1.1);
 }
 
 /* Box Styling */
 .box {
     color: #ffffff;
-    font-size: 50px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    display: flex;
-    justify-content: space-between;
+    font-size: 45px;
+    transition: font-size 0.3s ease;
 }
-
-.box-text-button {
-    width: 30%;
-    padding-top: 11%;
-    padding-left: 9%;
-}
-
-.box-text-button p {
-    margin: 0;
-    padding-bottom:10%;
-}
-
-.box button {
+.box-button {
     background-color: #4F378B;
     color: #ffffff;
     width: 8em;
-    height: 3em;
+    height: 2.1em;
     border-radius: 4em;
-    font-size: 40%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 35%;
+    font-family: 'Times New Roman', Times, serif;
     border: none;
+    transition: ease 0.6s;
+}
+.box-button:hover {
+    background-color: #8c75d1;
+    transform: scale(1.1);
+}
+.fa-solid {
+    margin-left: 12px;
+}
+.box-image {
+    height: auto;
+    width: 100%;
 }
 
-.box-image {
+/* Wrapper Styling */
+.wrapper {
+    font-family: 'Noto Rashi Hebrew';
+    background: transparent;
+    border: 0.01em solid #514e4e;
+    border-radius: 0.3em;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    transition: ease 0.6s;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgb(69, 68, 68) inset;
+}
+.wrapper:hover {
+    transform: scale(1.05);
+}
+
+/* Initially hide login and signup forms */
+#login-form, #signup-form, #forgot-password-form {
+    display: none;
+}
+
+/* Form Box Styling */
+.form-box {
+    width: 100%;
+}
+.input-box input {
+    position: relative;
+    width: 100%;
+    height: 33px;
+    border: 1px solid rgb(137, 137, 137);
+    border-radius: 0.5em;
+    background-color: transparent;
+    margin: 0;
+    color: #fff;
+}
+.input-box input[placeholder] {
+    padding-left: 10px;
+    color: #fff;
+    font-family: 'Noto Rashi Hebrew';
+    font-size: 12px;
+}
+.input-box {
+    height: 40px !important;
+}
+#toggle-password {
+    display: flex;
+    float: right;
+    transform: translate(-10px ,-30px);
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Remember me / Forgot password section */
+.remember-forgot {
+    font-size: 10px;
+    color: #fff;
     width:100%;
-    padding-left: 0%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+input[type=checkbox] {
+    accent-color: #4F378B;
+}
+
+.remember-forgot a {
+    text-decoration: none;
+    color: #fff;
+    margin-top:5px;
+}
+.remember-forgot a:hover {
+    color: #4F378B;
+}
+/* Align checkbox and text */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-container input {
+    width: 12px; /* Adjust size if needed */
+    height: 12px;
+}
+
+.check-text {
+    font-size: 10px;
+    color: #fff;
+    margin-top:3px;
+}
+
+/* If you want a little space between checkbox and text */
+.checkbox-container .ms-2 {
+    margin-left: 8px; /* This adds space between the checkbox and the label text */
+}
+/* Button Styling */
+.btn {
+    width: 100%;
+    height: 37px;
+    background: linear-gradient(to right, transparent, #4F378B, transparent);
+    border: none;
+    border-color: #fff;
+    color:#fff !important;
+    border-radius: 0.3em;
+    outline: none;
+    font-size: 50%;
+    color: #fff;
+    transition: ease 0.5s !important;
+}
+
+.btn:hover{
+    background: linear-gradient(to right, #4F378B, #000, #4F378B);
+    transform: scale(1.1);
+}
+
+/* Or Section Styling */
+.or {
+    display: flex;
+    padding-top: 0%;
     margin:0;
 }
-
-.box-image img {
-    width: 80%;
-    float:right;
-    padding-right:9%;
+.or h6 {
+    padding-right: 8px;
+    padding: 3% 5% 0% 5%;
+    font-size: 10px;
+    color: #514e4e;
+}
+.or:before, .or:after {
+    display: inline-block;
+    content: "";
+    border-top: .005em solid #514e4e;
+    width: 100%;
+    margin: 0;
+    transform: translateY(50%);
 }
 
-/* Media Queries for Responsiveness */
-@media screen and (max-width: 1200px) {
-    .box {
-        flex-direction: column;
-        align-items: center;
-        font-size: 40px;
-    }
+/* Other login options section */
+.other-logs {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+}
+/* Login-Register section */
+.login-register {
+    font-size: 1em;
+    color: #fff;
+    margin-top: 2%;
+    text-align: center;
+    font-weight: 500;
+    padding:0;
+}
+.login-register p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 120;
+}
+.login-register p a:hover {
+    text-decoration: none;
+    color: #4F378B;
+    font-weight: 700;
+}
 
-    .box-text-button {
-        width: 100%;
-        text-align: center;
-    }
+/* Form Text */
+.form-box p {
+    margin: 0;
+    font-size: 10px;
+}
+.form-box button {
+    font-size: 30%;
+    margin-top: 25px;
+    padding:0 !important;
+}
+#log-button {
+    margin-top: -20px !important;
+}
 
-    .box-image {
-        width: 100%;
-        text-align: center;
-        padding-left: 0;
-    }
+/* Form Box Header */
+.wrapper h2 {
+    margin-bottom: 2%;
+    color: #fff;
+    font-size: 53%;
+    padding-top:0;
+    margin-top:0;
+    font-weight: 120;
+}
+.animate__animated.animate__fadeInLeft {
+    --animate-duration: 2s;
+}
+.animate__animated.animate__fadeInRight{
+    --animate-duration: 2s;
+}
 
+@media (max-width: 1200px) {
+    .wrapper {
+        margin:20px !important;
+        height:fit-content !important; 
+    }
+    .header{
+        margin-top:15px;
+    }
+    .header-image img {
+        width: 50px;
+    }
     .header-buttons {
-        padding-left: 0;
-        width: 100%;
-        justify-content: center;
+        display: flex;
+        text-align: center;
+        gap: 0;
         margin-top: 10px;
+        font-size:10px !important;
     }
-
-    .header {
-        flex-direction: column;
-        align-items: center;
-        padding: 5%;
+    .remember-forgot {
+        padding-top:5px;
+        font-size: 7px;
+        padding-bottom: 10px;
     }
-
-    .header-image {
-        margin-left: 0;
-        padding-top: 0;
+    .btn{
+        font-size: 10px !important; 
     }
-
-    .header button {
-        width: 6em;
-        height: 2.5em;
-        font-size: 10px;
-    }
-
-    .box button {
-        width: 6em;
-        height: 2.5em;
-        font-size: 35%;
-    }
-}
-
-@media screen and (max-width: 768px) {
     .box {
         font-size: 30px;
     }
-
-    .box-text-button {
-        width: 100%;
-        font-size: 25px;
+    .box-button {
+        font-size: 50%;
     }
-
-    .header-image img {
-        width: 10%;
-        height: 10%;
+    .col-md-7 {
+        display: none;
     }
-
-    .box button {
-        width: 7em;
-        height: 2.5em;
-        font-size: 30%;
-    }
-
-    .header button {
-        width: 7em;
-        height: 2.5em;
-        font-size: 9px;
-    }
-
-    .box-image img {
+    .wrapper {
         width: 90%;
     }
+    #toggle-password {
+        display: flex;
+        float: right;
+        transform: translate(-10px ,-25px);
+        color: #fff;
+        font-size: 14px;
+    }
 }
-
-@media screen and (max-width: 480px) {
-    .box {
-        font-size: 24px;
+@media (max-width: 768px) {
+    .wrapper {
+        margin:20px !important;
+        height:fit-content !important; 
     }
-
-    .box-text-button {
-        width: 100%;
-        font-size: 20px;
+    .header{
+        margin-top:15px;
     }
-
-    .box button {
-        width: 6em;
-        height: 2.5em;
-        font-size: 25%;
-    }
-
-    .header button {
-        width: 6em;
-        height: 2.5em;
-        font-size: 8px;
-    }
-
     .header-image img {
-        width: 15%;
-        height: 15%;
+        width: 50px;
     }
-
     .header-buttons {
-        justify-content: center;
-        padding-top: 10px;
+        display: flex;
+        text-align: center;
+        gap: 0;
+        margin-top: 10px;
+        font-size:10px !important;
+    }
+    .remember-forgot {
+        padding-top:5px;
+        font-size: 10px;
+    }
+    .btn{
+        font-size: 15px !important; 
+    }
+    .box {
+        font-size: 30px;
+    }
+    .box-button {
+        font-size: 50%;
+    }
+    .col-md-7 {
+        display: none;
+    }
+    .wrapper {
+        width: 90%;
     }
 
-    .box-image img {
-        width: 85%;
+    #toggle-password {
+        display: flex;
+        float: right;
+        transform: translate(-10px ,-25px);
+        color: #fff;
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    .wrapper {
+        margin:20px !important;
+        height:fit-content !important; 
+    }
+    .header-image img {
+        width: 20%;
+    }
+    .header-buttons {
+        display: flex;
+        text-align: center;
+        gap: 0;
+        margin-top: 10px;
+        font-size:small !important;
+    }
+    .box {
+        font-size: 30px;
+    }
+    .box-button {
+        font-size: 50%;
+    }
+    .col-md-7 {
+        display: none;
+    }
+    .wrapper {
+        width: 90%;
+    }
+    #toggle-password {
+        display: flex;
+        float: right;
+        transform: translate(-10px ,-25px);
+        color: #fff;
+        font-size: 14px;
     }
 }
