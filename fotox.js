@@ -1,41 +1,37 @@
-// Flag variable
-//NOTE: flag is the page where user choose imaginary or personalized 
-//flag=== 0 imaginary, flag===1 personalized 
-let flag =1; 
+// Flag variable, passed from another page 
+let flag =1; // Change this value to test different behaviors (0 or 1)
 
 // Initialize the page based on the flag value
 window.onload = function () {
     const btnImg = document.getElementById("btn-img");
     const uploadContainer = document.querySelector(".upload-box-container");
     const idContainer = document.querySelector(".id-container"); // Select id-container
-    const idInput=document.getElementById("input-id");
     const image = document.getElementById("main-image");
     const crystalBtn = document.getElementById("crystal");
     const dropdownContent = document.querySelector(".dropdown-content");
     const uploadIcon = document.getElementById("upload-icon");
     const header_text = document.getElementById('title-text');
+    const dropdown_icon = document.getElementById("dropdown-icon");
 
     let uploadedFiles = []; // To store uploaded file references
 
     if (flag === 0) {
         // Case: Imaginary
         btnImg.textContent = "Imaginary";
-        btnImg.disabled = true;
+        // btnImg.disabled = true;
         dropdownContent.style.display = "none"; 
         uploadContainer.style.display = "none"; 
         idContainer.style.display = "none";
         image.src = "images/Fox.png";
-        header_text.textContent = "Generate your Imaginary Image!";
 
     } else if (flag === 1) {
         // Case: Personalize
-        btnImg.textContent = "Personalize";
+        // btnImg.textContent = "Personalize";
         btnImg.disabled = false; 
         dropdownContent.style.display = "none"; 
         uploadContainer.style.display = "none"; 
         idContainer.style.display = "none";
         image.src = "images/person.png";
-        header_text.textContent = "Generate your Personalized Image!";
 
         // Toggle dropdown visibility when clicking btn-img
         btnImg.addEventListener("click", () => {
@@ -56,7 +52,7 @@ window.onload = function () {
         // Add event listener for dropdown menu clicks
         dropdownContent.addEventListener("click", (event) => {
             const option = event.target.textContent;
-            if (option === "Create New") {
+            if (option === "create new") {
                 uploadContainer.style.display = "flex"; 
                 idContainer.style.display = "none"; 
                 btnImg.textContent = "Create New";
@@ -95,15 +91,8 @@ window.onload = function () {
                 }, 2000); // Simulate loading
             }
         });
-
-        idContainer.addEventListener("click", () => {
-            const idValue = parseInt(idInput.value); // Parse the input value
-            if (idValue < 0) {
-                alert("ID should be a positive number");
-            }
-        });
     }
-//NOTE: add progress bar  to an infinit loop and break when the images are generated 
+
     // Handle crystal button click to show progress bar
     let isProgressBarActive = false;
     crystalBtn.addEventListener("click", () => {
