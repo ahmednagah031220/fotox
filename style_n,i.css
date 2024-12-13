@@ -1,73 +1,92 @@
 body {
-    background: #000 !important;
-    color: #ffffff !important;
+    background-color: #000 !important;
+    color: #ffffff;
     margin: 0;
     padding: 0;
     font-family: "Lustria", serif;
 }
-
-.container {
-    background: #000;
-    border-color: #000;
-}
+/* ////////////////////////////////////////////////////////////// */
 /* Header Styling */
 .header {
     background-color: #000;
     color: #4F378B;
     display: flex;
     justify-content: space-between;
-    padding: 1% 3% 0% 2%;
+    padding: 2.5% 3% 5% 2%;
     align-items: center;
-    height:50px;
+    height: 50px;
 }
 .header-image img {
-    width: 15%;
-    height: 100%;
+    width: 5%;
+    height: auto;
     padding-top: 3%;
     transition: ease 0.6s;
-    margin-top: 20px;
 }
-.header-image img:hover{
+.header-image img:hover {
     transform: scale(1.1);
 }
-#title-text {
-    font-size: 55px;
-    margin-top:57px;
-    margin-bottom: 30px;
-    font-family: 'DM Serif Display', 'serif';
-    margin-bottom: -90px;
+.header-buttons {
+    display: inline-flex;
+    gap: 10px;
+    transition: ease 0.6s;
 }
-.header button{
-    border-radius: 5em;
-    font-family: 'DM Serif Display', 'serif';
+.header button {
     background-color: #4F378B;
     color: #ffffff;
     width: 8em;
     height: 3em;
     border-radius: 4em;
-    font-size: 13px;
+    font-size: 12px;
     border: none;
     transition: ease 0.6s;
-    margin-top: 25px;
 }
 .header button:hover {
-    background-color: #9d88dd;
+    background-color: #8c75d1 !important;
     transform: scale(1.1);
 }
+/* ////////////////////////////////////////////////////////////// */
 
-/* Box Styling */
-.box {
+
+
+
+
+/* Container Styling */
+.container {
     text-align: center;
     margin-top: 20px;
 }
 
-.title {
-    font-size: 1.8rem;
-    color: #f5f5f5;
+/* Start Text */
+#title-text {
+    display: absolute;
+    color: #fff;
+    font-size: 55px;
+    margin-top: -30px;
+    font-family: 'DM Serif Display', 'serif';
+}
+
+#title-text h1 {
+    font-size: 4rem;
+    margin-bottom: 0rem;
+}
+
+#title-text h2 {
+    font-size: 3rem;
+    margin-bottom: 0px;
+    justify-content: center;
+}
+/* End Text */
+
+
+/* Start Options */
+.options {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
 }
 
 /* Image Box */
-.image-box_1, .image-box_2 {
+.image-box{
     position: relative;
     width: 40%;
     height: 40%;
@@ -80,6 +99,18 @@ body {
     transition: transform 0.2s ease;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* Circular Buttons */
 .button-container {
     margin-top: 15px;
@@ -91,28 +122,24 @@ body {
 .circle-button {
     background-color: #4F378B;
     color: #ffffff;
-    font-family: 'Times New Roman', Times, serif;
-    padding: 10px 20px;
-    border-radius: 20px;
+    width: 8em;
+    height: 3em;
+    border-radius: 4em;
+    font-size: 12px;
     border: none;
-    cursor: pointer;
-    transition: 0.3s ease;
+    transition: ease 0.6s;
 }
 
 .circle-button:hover {
-    background-color: #6c4fa3;
-    transform: scale(1.05);
+    background-color: #8c75d1 !important;
+    transform: scale(1.1);
 }
 
-.options {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
+
 
 .circle {
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: 60%;
     display: flex;
     border-radius: 50%;
     margin: 20px auto;
@@ -126,24 +153,130 @@ body {
 }
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 1200px) {
+    .wrapper {
+        margin:20px !important;
+        height:fit-content !important; 
     }
-
+    .header{
+        margin-top:15px;
+    }
     .header-image img {
         width: 50px;
     }
-
-    .image-box_1, .image-box_2 {
-        width: 70%;
-        height: auto;
+    .header-buttons {
+        display: flex;
+        text-align: center;
+        gap: 0;
+        margin-top: 10px;
+        font-size:10px !important;
+    }
+    .remember-forgot {
+        padding-top:5px;
+        font-size: 7px;
+        padding-bottom: 10px;
+    }
+    .btn{
+        font-size: 10px !important; 
+    }
+    .box {
+        font-size: 30px;
+    }
+    .box-button {
+        font-size: 50%;
+    }
+    .col-md-7 {
+        display: none;
+    }
+    .wrapper {
+        width: 90%;
+    }
+    #toggle-password {
+        display: flex;
+        float: right;
+        transform: translate(-10px ,-25px);
+        color: #fff;
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .wrapper {
+        margin:20px !important;
+        height:fit-content !important; 
+    }
+    .header{
+        margin-top:15px;
+    }
+    .header-image img {
+        width: 50px;
+    }
+    .header-buttons {
+        display: flex;
+        text-align: center;
+        gap: 0;
+        margin-top: 10px;
+        font-size:10px !important;
+    }
+    .remember-forgot {
+        padding-top:5px;
+        font-size: 10px;
+    }
+    .btn{
+        font-size: 15px !important; 
+    }
+    .box {
+        font-size: 30px;
+    }
+    .box-button {
+        font-size: 50%;
+    }
+    .col-md-7 {
+        display: none;
+    }
+    .wrapper {
+        width: 90%;
     }
 
-    .circle-button {
-        width: 45px;
-        height: 45px;
-        font-size: 12px;
+    #toggle-password {
+        display: flex;
+        float: right;
+        transform: translate(-10px ,-25px);
+        color: #fff;
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    .wrapper {
+        margin:20px !important;
+        height:fit-content !important; 
+    }
+    .header-image img {
+        width: 20%;
+    }
+    .header-buttons {
+        display: flex;
+        text-align: center;
+        gap: 0;
+        margin-top: 10px;
+        font-size:small !important;
+    }
+    .box {
+        font-size: 30px;
+    }
+    .box-button {
+        font-size: 50%;
+    }
+    .col-md-7 {
+        display: none;
+    }
+    .wrapper {
+        width: 90%;
+    }
+    #toggle-password {
+        display: flex;
+        float: right;
+        transform: translate(-10px ,-25px);
+        color: #fff;
+        font-size: 14px;
     }
 }
