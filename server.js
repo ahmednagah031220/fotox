@@ -58,10 +58,6 @@ app.post("/signup", async (req, res) => {
     }
   });
 
-
-
-
-
 // Login 
 
 const axios = require("axios"); // Add Axios for HTTP requests
@@ -101,7 +97,9 @@ app.post("/login", async (req, res) => {
       uid: localId,
       idToken,
       refreshToken,
+      
     });
+
   } catch (error) {
     console.error("Error logging in:", error.response?.data || error.message);
     res.status(401).json({
@@ -114,16 +112,73 @@ app.post("/login", async (req, res) => {
 });
 
 
+const checkAuth = async (req, res, next) => {
+  const sessionCookie = req.cookies.session || ""; // Retrieve session cookie
+
+  try {
+    // Verify session cookie
+    const decodedClaims = await admin.auth().verifySessionCookie(sessionCookie, true);
+
+    // Attach user information to the request
+    req.user = decodedClaims;
+    next(); // Proceed to the next middleware or route handler
+  } catch (error) {
+    console.error("Authentication failed:", error.message);
+    res.redirect("/"); // Redirect to login page if not authenticated
+  }
+};
+
+const checkAuthAndRedirect = async (req, res, next) => {
+  const sessionCookie = req.cookies.session || "";
+
+  try {
+    const decodedClaims = await admin.auth().verifySessionCookie(sessionCookie, true);
+
+    req.user = decodedClaims;
+    // Redirect to "/dashboard" if authenticated
+    res.redirect("/index_n,i");
+  } catch (error) {
+    // Redirect to login if no session is found
+    res.redirect("/login");
+  }
+};
 
 
-app.get("/", function (req, res) {
-res.render("index.html");
+
+// Middleware to handle logout
+const logoutMiddleware = (req, res) => {
+  // Clear the session cookie
+  res.clearCookie("session", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "Strict", // Adjust based on your needs
+  });
+
+  res.status(200).json({ message: "Successfully logged out" });
+};
+
+
+app.get("/", checkAuthAndRedirect);
+
+
+app.get("/likes", checkAuth, function (req, res) {
+res.render("likes.html");
+});
+app.get("/fotox", checkAuth, function (req, res) {
+res.render("fotox.html");
+});
+app.get("/index_i", checkAuth,  function (req, res) {
+res.render("index_i.html");
+});
+app.get("/index_n,i", checkAuth,  function (req, res) {
+res.render("index_n,i.html");
+});
+app.get("/index_n", checkAuth,  function (req, res) {
+res.render("index_n.html");
 });
 
+app.post("/logout", logoutMiddleware);
 
-app.get("/", function (req, res) {
-res.render("index.html");
-});
 
 
 
