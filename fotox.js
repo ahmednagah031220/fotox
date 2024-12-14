@@ -91,6 +91,13 @@ window.onload = function () {
                 }, 2000); // Simulate loading
             }
         });
+        
+        idContainer.addEventListener("click", () => {
+            const idValue = parseInt(idInput.value); // Parse the input value
+            if (idValue < 0) {
+                alert("ID should be a positive number");
+            }
+        });
     }
 
     // Handle crystal button click to show progress bar
