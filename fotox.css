@@ -21,7 +21,7 @@ body {
     height:50px;
 }
 .header-image img {
-    width: 5%;
+    width:5%;
     height: 100%;
     padding-top: 3%;
     transition: ease 0.6s;
@@ -227,8 +227,8 @@ body {
 .upload-box-container #btn-upload{
     display: block;
     float: right;
-    width: 130px; /* Smaller button width */
-    height: 40px; /* Adjust height */
+    width: 130px; 
+    height: 40px; 
     background-color: #4F378B;
     border: none;
     color: #fff;
@@ -323,10 +323,10 @@ body {
     align-self: center;
     padding: 0%;
     transition: transform 0.3s ease;
+    margin-top: 50px;
 }
 .box-image img {
     width: 120%;
     height: 120%;
     transition: transform 0.3s ease;
 }
-
