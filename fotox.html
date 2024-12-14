@@ -18,7 +18,7 @@
     </head>
     <header>
         <div class="header">
-            <div class="header-image">
+            <div class="header-image image-fluid">
                 <a href="index.html">
                     <!--NOTE: change source -->
                     <img href="fotox.html" src="images\logo.png" alt="Logo">
@@ -31,48 +31,66 @@
         </div>
     </header>
     <body>
-        <div class="container"> 
-            <div class="title-text-page row">
-                <div id="title-text" class="col align-content-center">
-                    <h1>Welcome to Fotox Free AI Image Generator</h1>
-                    <h2>Choose what type of image to generate:</h2>
+        <div class="container">
+            <!-- Title Row -->
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12 text-center order-1 mb-3">
+                    <div class="title-text-page" id="title-text">
+                        <h1>Welcome to Fotox: A Free AI Image Generator</h1>
+                        <h2>Choose what type of image to generate:</h2>
+                    </div>
                 </div>
             </div>
-            <div class="box row">
-                <div class="input-box col-7  align-self-center d-flex justify-content-center">
-                    <form action="#">
-                        <div class="input-box-container">
-                            <div class="dropdown">
-                            <button type="button" class="btn" id="btn-img">Personalize<i class="fa-solid fa-caret-down fa-s" style="color: #fff;"></i></button>
-                            <!--NOTE ADJUST NUMBER OF PHOTOS BASED ON HOW MANY ARE THERE IN THE DATABASE -->
-                                <div class="dropdown-content">
-                                    <a href="#">photo 1</a>
-                                    <a href="#">photo 2</a>
-                                    <a href="#">create new</a>
+        
+            <!-- Main Content Row -->
+            <div class="row align-items-center">
+                <!-- Input Box -->
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-flex justify-content-center order-lg-1 order-2 mb-3">
+                    <div class="input-box">
+                        <form action="#">
+                            <div class="input-box-container">
+                                <div class="dropdown">
+                                    <button type="button" class="btn" id="btn-img">
+                                        Personalized <i class="fa-solid fa-caret-down" style="color: #fff;"></i>
+                                    </button>
+                                    <div class="dropdown-content">
+                                        <a href="#">Photo 1</a>
+                                        <a href="#">Photo 2</a>
+                                        <a href="#">Create New</a>
+                                    </div>
                                 </div>
+                                <input type="text" placeholder="What do you want to generate?" required>
+                                <button type="button" class="btn" id="crystal">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </button>
                             </div>
-                                
-                                
-                            <input type="text" placeholder="What do you want to generate?" required>
-                            <button type="button" class="btn" id="crystal"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
-                        </div>
-
-                        <div class="upload-box-container">
-                            <button type="button" class="btn" id="btn-upload">upload pics</button> 
-                            <button type="button" class="btn" id="upload-icon"><i class="fa-solid fa-cloud-arrow-up fa-2xs" style="color: #3b2968;"></i></button>
-                        </div>
-                        <div class="id-container">
-                            <button type="button" class="btn" id="btn-id">ID</button> 
-                            <input type="number" placeholder="Enter picture ID (optional)">
-                        </div>
-                    </form>                        
+        
+                            <div class="upload-box-container">
+                                <button type="button" class="btn" id="btn-upload">Upload Pics</button>
+                                <button type="button" class="btn" id="upload-icon">
+                                    <i class="fa-solid fa-cloud-arrow-up fa-2xs" style="#3b2968"></i>
+                                </button>
+                            </div>
+        
+                            <div class="id-container">
+                                <button type="button" class="btn" id="btn-id">ID</button>
+                                <input type="number" placeholder="Enter picture ID (optional)" id="input-id">
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="box-image col align-items-start d-flex justify-content-center">
-                <!--NOTE: change source -->
-                    <img src=".\images\Fox.png"  alt="Image of an AI generated fox" id="main-image"class="animate__animated animate__fadeInRight ">
+        
+                <!-- Image Box -->
+                <div class="col-lg-6 col-12 d-flex justify-content-center order-lg-2">
+                    <div class="box-image">
+                        <img src="./images/Fox.png" alt="Image of an AI generated fox" id="main-image"
+                            class="animate__animated animate__fadeInRight">
+                    </div>
                 </div>
             </div>
         </div>
+        
+        
             <!-- Link the JS file -->
             <script src="fotox.js"></script>
             <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
