@@ -13,7 +13,7 @@ databaseURL: "https://server-auth-41acc.firebaseio.com",
 
 const csrfMiddleware = csrf({ cookie: true });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 app.engine("html", require("ejs").renderFile);
@@ -139,7 +139,7 @@ const checkAuthAndRedirect = async (req, res, next) => {
     res.redirect("/index_n,i");
   } catch (error) {
     // Redirect to login if no session is found
-    res.redirect("/login");
+    res.render("index.html");
   }
 };
 
@@ -289,7 +289,7 @@ app.post("/googleSignInButton", async (req, res) => {
           email: userRecord.email,
           displayName: userRecord.displayName,
         },
-      });
+      }); 
     } catch (error) {
       console.error("Error verifying Google ID token:", error.message);
       res.status(500).json({
