@@ -1,37 +1,35 @@
 // Flag variable, passed from another page 
-let flag =1; // Change this value to test different behaviors (0 or 1)
-
 // Initialize the page based on the flag value
 window.onload = function () {
+    let flag = localStorage.getItem("flag"); // Change this value to test different behaviors (0 or 1)
     const btnImg = document.getElementById("btn-img");
     const uploadContainer = document.querySelector(".upload-box-container");
     const idContainer = document.querySelector(".id-container"); // Select id-container
     const image = document.getElementById("main-image");
-    const crystalBtn = document.getElementById("crystal");
+    const crystalBtn = document.getElementById("per_crystal");
+    const img_crystal = document.getElementById("img_crystal");
     const dropdownContent = document.querySelector(".dropdown-content");
     const uploadIcon = document.getElementById("upload-icon");
     const header_text = document.getElementById('title-text');
     const dropdown_icon = document.getElementById("dropdown-icon");
-
-    let uploadedFiles = []; // To store uploaded file references
-
-    if (flag === 0) {
+    const img_form = document.getElementById("img_form");
+    const per_form = document.getElementById("per_form");
+    
+    let uploadedFile = null;
+    if (flag === "0") {
         // Case: Imaginary
-        btnImg.textContent = "Imaginary";
-        // btnImg.disabled = true;
-        dropdownContent.style.display = "none"; 
-        uploadContainer.style.display = "none"; 
-        idContainer.style.display = "none";
-        image.src = "images/Fox.png";
+        img_form.style.display = "block";
+        per_form.style.display = "none";  
+        image.src = "./asset/img/Fox.png";
 
-    } else if (flag === 1) {
-        // Case: Personalize
-        // btnImg.textContent = "Personalize";
-        btnImg.disabled = false; 
+    } else if (flag === "1") {       // Case: Personalize
+ 
         dropdownContent.style.display = "none"; 
         uploadContainer.style.display = "none"; 
         idContainer.style.display = "none";
-        image.src = "images/person.png";
+        img_form.style.display = "none";
+        per_form.style.display = "block";   
+        image.src = './asset/img/person.png';
 
         // Toggle dropdown visibility when clicking btn-img
         btnImg.addEventListener("click", () => {
@@ -68,29 +66,41 @@ window.onload = function () {
         document.getElementById("btn-upload").addEventListener("click", () => {
             const fileInput = document.createElement("input");
             fileInput.type = "file";
-            fileInput.accept = "image/*";
-            fileInput.multiple = true; 
-            fileInput.click(); 
+            fileInput.accept = ".zip";  
+            fileInput.click();
+        
             fileInput.addEventListener("change", () => {
-                uploadedFiles = Array.from(fileInput.files); 
-                document.getElementById("upload-icon").innerHTML = '<i class="fas fa-arrow-up"></i>'; // Reset icon to upload
+                uploadedFile = fileInput.files[0]; 
+                if (uploadedFile) {
+                    const isZipFile = uploadedFile.type === "application/zip" || uploadedFile.name.endsWith(".zip");
+        
+                    if (!isZipFile) {
+                        alert("Please upload a valid .zip file.");
+                        uploadedFile = null;
+                        return;
+                    }
+
+                } else {
+                    alert("No file selected. Please upload a .zip file.");
+                }
             });
         });
-
+        
         // Handle upload-icon click
         uploadIcon.addEventListener("click", () => {
-            const numFiles = uploadedFiles.length;
-
-            // Validate number of files
-            if (numFiles < 15 || numFiles > 50) {
-                alert("You should upload 15-50 images");
-            } else {
-                uploadIcon.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>'; 
-                setTimeout(() => {
-                    uploadIcon.innerHTML = '<i class="fas fa-check"></i>';
-                }, 2000); // Simulate loading
+            if (!uploadedFile) {
+                alert("Please upload a .zip file first.");
+                return; 
             }
+        
+            // Simulate processing
+            uploadIcon.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+            setTimeout(() => {
+                uploadIcon.innerHTML = '<i class="fas fa-check"></i>';
+            }, 2000); 
         });
+        
+
         
         idContainer.addEventListener("click", () => {
             const idValue = parseInt(idInput.value); // Parse the input value
@@ -102,7 +112,7 @@ window.onload = function () {
 
     // Handle crystal button click to show progress bar
     let isProgressBarActive = false;
-    crystalBtn.addEventListener("click", () => {
+    function showProgress(){
         if (isProgressBarActive) return; 
 
         isProgressBarActive = true; 
@@ -128,8 +138,17 @@ window.onload = function () {
                 progressBar.style.width = `${width}%`;
             }
         }, 50);
+    }
+
+
+    img_crystal.addEventListener("click", () => {
+        showProgress(); 
+    });
+    crystalBtn.addEventListener("click", () => {
+        showProgress();
     });
 };
+
 
 // Progress bar styles
 const style = document.createElement("style");
