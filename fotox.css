@@ -12,6 +12,7 @@ body {
 }
 /* Header Styling */
 .header {
+    width: 100%;
     background-color: #000;
     color: #4F378B;
     display: flex;
@@ -19,9 +20,11 @@ body {
     padding: 1% 3% 0% 2%;
     align-items: center;
     height:50px;
+    margin: 0 auto;
+    z-index: 1000;
 }
 .header-image img {
-    width:5%;
+    width: 5%;
     height: 100%;
     padding-top: 3%;
     transition: ease 0.6s;
@@ -48,7 +51,7 @@ body {
 }
 .header button{
     border-radius: 5em;
-    font-family: 'DM Serif Display', 'serif';
+    font-family: "Abhaya Libre", serif;
     background-color: #4F378B;
     color: #ffffff;
     width: 8em;
@@ -63,6 +66,8 @@ body {
     background-color: #9d88dd;
     transform: scale(1.1);
 }
+
+
 /* Input Box Container Styling */
 .input-box-container {
     display: flex;
@@ -261,8 +266,6 @@ body {
 }
 /* ID Container Styling */
 .id-container {
-    grid-column: 2/3; /* Second column */
-    grid-row: 2/3; /* Second row of the second column */
     justify-self: start;
     justify-content: space-between; 
     display: flex;
@@ -323,10 +326,138 @@ body {
     align-self: center;
     padding: 0%;
     transition: transform 0.3s ease;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 .box-image img {
     width: 120%;
     height: 120%;
     transition: transform 0.3s ease;
 }
+
+
+/*newwwwwwwwwwwwwww*/
+
+/* Specific styles for small screens */
+@media (max-width: 768px) {    
+    .container{
+       padding-left: 150%;
+    }
+    .header-image img {
+        width: 11%; /* Further increase logo size */
+        height: 100%;
+        margin-left: 10%;
+    }
+    #title-text h1 {
+        font-size: 20px; /* Smaller font size for titles */
+    }
+
+    #title-text h2 {
+        font-size: 18px;
+    }
+
+    .box-image img {
+        width: 70%; /* Ensure the image fits within the screen */
+    }
+    
+    .input-box {
+        width: 95%; /* Slightly narrower for smaller screens */
+    }
+
+    .header-buttons  {
+        margin-right: 5%;
+        
+
+    }
+    .header button{
+        width: 6em;
+    }
+    html {
+        justify-content: center ;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      .header{
+        display: inline-block; /* Or display: flex */
+        width: auto; /* Remove fixed width */
+        margin: 0 auto; /* Center horizontally */
+        position: fixed;
+        justify-content: space-between; 
+      }
+      
+    .box.row.align-items-center {
+    margin-top: 120px; /* Adjust the value as needed */
+    }
+    .input-box-container #btn-img , .input-box-container ::placeholder {
+        font-size: 10px;
+    }
+    .container-fluid.align-items-center.mx-auto {
+        padding-top: 20px;
+      }
+    
+    
+    /* Shrink input-box-container */
+    .input-box-container {
+        width: 100%; /* Shrink to 90% of the parent/container width */
+        height: 50px; /* Decrease height */
+        padding: 3px; /* Reduce padding */
+        margin-left: 50px;
+    }
+
+    .input-box-container input {
+        font-size: 14px; /* Reduce font size */
+        padding: 0 10px; /* Adjust padding */
+        margin-left: 50px;
+    }
+
+    .input-box-container button {
+        font-size: 14px; /* Smaller button text */
+        height: 90%; /* Adjust height slightly */
+    }
+
+    /* Shrink upload-box-container */
+    .upload-box-container {
+        width: 150px; /* Reduce width */
+        height: 50px; /* Reduce height */
+    }
+
+    .upload-box-container button {
+        font-size: 8px; /* Smaller button font size */
+        padding: 0px 15px; /* Adjust padding */
+    }
+
+    #btn-upload {
+        width: 100px; /* Shrink button */
+        height: 35px; /* Shrink height */
+        font-size: 8px; /* Smaller font size */
+        font-weight: 100;
+    }
+
+    #upload-icon {
+        width: 40px; /* Reduce icon size */
+        height: 35px;
+    }
+
+    #upload-icon i {
+        font-size: 14px; /* Reduce icon font size */
+    }
+
+    /* Shrink id-container */
+    .id-container {
+        width: 200px; /* Reduce width */
+        height: 40px; /* Reduce height */
+    }
+
+    .id-container button {
+        font-size: 12px; /* Reduce font size */
+        padding: 0 15px; /* Adjust padding */
+    }
+
+    .id-container input {
+        font-size: 14px; /* Adjust input font size */
+        padding: 0 10px; /* Adjust input padding */
+    }
+}
+
