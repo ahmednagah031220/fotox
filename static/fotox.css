@@ -12,6 +12,7 @@ body {
 }
 /* Header Styling */
 .header {
+    width: 100%;
     background-color: #000;
     color: #4F378B;
     display: flex;
@@ -19,6 +20,8 @@ body {
     padding: 1% 3% 0% 2%;
     align-items: center;
     height:50px;
+    margin: 0 auto;
+    z-index: 1000;
 }
 .header-image img {
     width: 5%;
@@ -38,17 +41,18 @@ body {
     font-family: 'DM Serif Display', 'serif';
     margin-bottom: -120px;
 }
+
 #title-text h2{
     font-size: 45px;
     margin-top:57px;
     margin-bottom: 30px;
-    padding: 40px 0 0 50px;
+    padding: 40px 0 0 0;
     font-family: 'DM Serif Text', 'serif';
     margin-bottom: -120px;
 }
 .header button{
     border-radius: 5em;
-    font-family: 'DM Serif Display', 'serif';
+    font-family: "Abhaya Libre", serif;
     background-color: #4F378B;
     color: #ffffff;
     width: 8em;
@@ -64,9 +68,6 @@ body {
     transform: scale(1.1);
 }
 
-#logout_button{
-    font-family: "Abhaya Libre", serif;
-}
 
 /* Input Box Container Styling */
 .input-box-container {
@@ -232,8 +233,8 @@ body {
 .upload-box-container #btn-upload{
     display: block;
     float: right;
-    width: 130px; /* Smaller button width */
-    height: 40px; /* Adjust height */
+    width: 130px; 
+    height: 40px; 
     background-color: #4F378B;
     border: none;
     color: #fff;
@@ -266,8 +267,6 @@ body {
 }
 /* ID Container Styling */
 .id-container {
-    grid-column: 2/3; /* Second column */
-    grid-row: 2/3; /* Second row of the second column */
     justify-self: start;
     justify-content: space-between; 
     display: flex;
@@ -328,9 +327,319 @@ body {
     align-self: center;
     padding: 0%;
     transition: transform 0.3s ease;
+
 }
 .box-image img {
-    width: 120%;
-    height: 120%;
+    max-width: 80%; /* Reduce the image size to 90% of its container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent cropping */
+    margin-top: 20px; /* Add space above the image */
     transition: transform 0.3s ease;
+}
+
+
+
+/*newwwwwwwwwwwwwww*/
+
+/* Specific styles for small screens */
+@media (max-width: 768px) {  
+    .input-box {
+        transform: scale(0.9); /* Scale down the form to 90% */
+        transform-origin: center; /* Center the scaling */
+        margin-top: 10px; /* Adjust spacing */
+    }
+
+    .input-box-container {
+        width: 100%; /* Allow full container width */
+    }
+
+    .upload-box-container, .id-container {
+        transform: scale(0.9); /* Scale other form elements */
+        margin-top: 10px; /* Add spacing */
+    } 
+    .container{
+       padding-left: 150%;
+    }
+    .header-image img {
+        width: 11%; /* Further increase logo size */
+        height: 100%;
+        margin-left: 10%;
+    }
+    #title-text h1 {
+        font-size: 20px; /* Smaller font size for titles */
+    }
+
+    #title-text h2 {
+        font-size: 18px;
+    }
+
+    .box-image img {
+        width: 70%; /* Ensure the image fits within the screen */
+    }
+    
+    .input-box {
+        width: 95%; /* Slightly narrower for smaller screens */
+    }
+
+    .header-buttons  {
+        margin-right: 5%;
+        
+
+    }
+    .header button{
+        width: 6em;
+    }
+    html {
+        justify-content: center ;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      .header{
+        display: inline-block; /* Or display: flex */
+        width: auto; /* Remove fixed width */
+        margin: 0 auto; /* Center horizontally */
+        position: fixed;
+        justify-content: space-between; 
+      }
+      
+    .box.row.align-items-center {
+    margin-top: 120px; /* Adjust the value as needed */
+    }
+    .input-box-container #btn-img , .input-box-container ::placeholder {
+        font-size: 10px;
+    }
+    .container-fluid.align-items-center.mx-auto {
+        padding-top: 20px;
+      }
+    
+
+    
+    /* Shrink input-box-container */
+    .input-box-container {
+        width: 100%; /* Shrink to 90% of the parent/container width */
+        height: 50px; /* Decrease height */
+        padding: 3px; /* Reduce padding */
+        margin-left: 50px;
+    }
+
+    .input-box-container input {
+        font-size: 14px; /* Reduce font size */
+        padding: 0 10px; /* Adjust padding */
+        margin-left: 50px;
+    }
+
+    .input-box-container button {
+        font-size: 14px; /* Smaller button text */
+        height: 90%; /* Adjust height slightly */
+    }
+
+    /* Shrink upload-box-container */
+    .upload-box-container {
+        width: 150px; /* Reduce width */
+        height: 50px; /* Reduce height */
+    }
+
+    .upload-box-container button {
+        font-size: 8px; /* Smaller button font size */
+        padding: 0px 15px; /* Adjust padding */
+    }
+
+    #btn-upload {
+        width: 100px; /* Shrink button */
+        height: 35px; /* Shrink height */
+        font-size: 8px; /* Smaller font size */
+        font-weight: 100;
+    }
+
+    #upload-icon {
+        width: 40px; /* Reduce icon size */
+        height: 35px;
+    }
+
+    #upload-icon i {
+        font-size: 14px; /* Reduce icon font size */
+    }
+
+    /* Shrink id-container */
+    .id-container {
+        width: 200px; /* Reduce width */
+        height: 40px; /* Reduce height */
+    }
+
+    .id-container button {
+        font-size: 12px; /* Reduce font size */
+        padding: 0 15px; /* Adjust padding */
+    }
+
+    .id-container input {
+        font-size: 8px; /* Adjust input font size */
+        padding: 0 10px; /* Adjust input padding */
+    }
+}
+
+@media (max-width: 576px) { 
+    .input-box-container button#btn-img { 
+        font-size: 10px; /* Reduce font size */
+        padding: 0 8px; /* Reduce button padding */
+        width: 90px; /* Set a smaller fixed width */
+        height: 35px; /* Adjust button height */
+        line-height: 1; /* Improve vertical text alignment */
+    }
+    .header-image img{
+        width: 20%;
+    }
+    
+    
+
+    .input-box-container input {
+        font-size: 12px; /* Keep input font size */
+        padding: 0 8px; /* Input padding */
+    }
+
+    .input-box-container {
+        width: 100%; /* Full container width */
+        max-width: 300px; /* Limit width */
+        height: 40px; /* Adjust height */
+        display: flex;
+        align-items: center; /* Vertical center */
+    }
+
+    .input-box-container input {
+        font-size: 10px; /* Reduce input font size */
+        padding: 0 8px; /* Reduce horizontal padding */
+        height: 100%; /* Ensure it matches the container height */
+        box-sizing: border-box; /* Prevent overflow */
+    }
+
+    .input-box-container input::placeholder {
+        font-size: 10px; /* Smaller placeholder font size */
+        color: #999; /* Light gray for visibility */
+        text-overflow: ellipsis; /* Prevent text cutoff */
+        overflow: hidden; /* Ensure it stays inside the input box */
+        white-space: nowrap; /* No wrapping of placeholder text */
+    }
+
+    .input-box-container button {
+        font-size: 10px; /* Adjust button font size */
+        height: 100%; /* Match height */
+        padding: 0 8px; /* Smaller padding */
+    }
+
+    .input-box-container {
+        width: 100%; /* Take full screen width */
+        max-width: 320px; /* Limit form width */
+        height: 40px; /* Adjust container height */
+        margin: 0 auto; /* Center the form */
+    }
+
+    .header-buttons{
+        /* width: 2.5em; */
+        font-size: 10px;
+    }
+    .input-box-container input::placeholder {
+        font-size: 10px; /* Smaller placeholder font size */
+        color: #666; /* Adjust color for visibility */
+    }
+
+    .input-box-container input {
+        font-size: 12px; /* Adjust input text size */
+        padding: 0 5px; /* Reduce padding to make space */
+    }
+
+    .input-box-container button {
+        font-size: 10px; /* Adjust button text size */
+        padding: 0 8px; /* Adjust padding */
+    }
+
+    .input-box-container {
+        width: 100%; /* Take full screen width */
+        max-width: 320px; /* Limit form width */
+        height: 40px; /* Reduce form height */
+        margin: 0 auto; /* Center the form */
+    }
+
+    .input-box-container input {
+        font-size: 12px; /* Smaller font size */
+        padding: 0 8px; /* Adjust padding for input */
+    }
+
+    .input-box-container button {
+        font-size: 12px; /* Smaller button text */
+        padding: 0 10px; /* Adjust button padding */
+        height: 100%; /* Ensure buttons scale with height */
+    }
+
+    .upload-box-container,
+    .id-container {
+        width: 90%; /* Reduce width for better fit */
+        max-width: 300px; /* Set max-width */
+        margin: 10px auto; /* Center align with space */
+        height: 40px; /* Reduce height */
+    }
+
+    .upload-box-container button,
+    .id-container button {
+        font-size: 12px; /* Smaller text size */
+        padding: 0 8px; /* Adjust padding */
+    }
+
+    .id-container input {
+        font-size: 12px; /* Smaller input text */
+        padding: 0 8px;
+    }
+
+    #main-image {
+        max-width: 90%; /* Ensure image scales to fit small screens */
+        padding-top: -20px !important; /* Add spacing */
+    }
+    
+    .input-box-container input {
+        margin: 0; /* Remove unwanted margins */
+        padding-left: 5px; /* Add a smaller left padding */
+        font-size: 12px; /* Adjust text size */
+        width: 100%; /* Ensure it fits its container */
+    }
+    .input-box-container input {
+        font-size: 10px; /* Smaller input text font size */
+        padding: 0 8px; /* Maintain clean padding */
+    }
+
+    .input-box-container button#btn-img {
+        width: 70px; /* Smaller fixed width */
+        height: 30px; /* Reduce height */
+        font-size: 10px; /* Reduce font size */
+        padding: 0 6px; /* Smaller padding */
+        line-height: 1.2; /* Adjust vertical alignment */
+        border-radius: 15px; /* Keep consistent rounded corners */
+    }
+
+    /* Adjust container for consistency */
+    .input-box-container {
+        max-width: 320px; /* Ensure container still fits screen */
+        height: 40px; /* Slightly taller for spacing */
+    }
+
+    /* Adjust the input for alignment */
+    .input-box-container input {
+        font-size: 10px; /* Match input font size */
+        padding: 0 3px; /* Adjust input padding */
+    }
+    .header-buttons .btn{
+        font-size: 10px;
+    }
+}
+
+
+
+
+
+
+html, body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }

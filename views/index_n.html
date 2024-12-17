@@ -6,8 +6,10 @@
         <link rel="icon" href="./asset/img/title.png" type="image/icon type">
         <title>Fotox</title>
         <link rel="stylesheet" href="style_n.css">
-        <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+        <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <div class="header">
@@ -19,16 +21,38 @@
             </div>
         </div>
         <div class="box">
-            <h1 class="title">Here is your Human "Foto"</h1>
+            <h1 class="title">Here is your "Foto"</h1>
             <div class="image-box">
                 <img src="./asset/img/IMG-20241201-WA0003.jpg" alt="Sample Image">
                 <div class="ambient-light"></div>
             </div>
             <div class="button-container">
-                <button class="circle-button" onclick="window.location.href='index_n,i.html'"><img src="./asset/img/arrow-left.png" alt="back" style="width:50%; height:50%;"></button>
-                <button class="circle-button" onclick="window.location.href='index_n,i.html'; alert('Saved to favourite')"><img src="./asset/img/heart.png" alt="back" style="width:50%; height:50%;"></button>
-                <button class="circle-button" onclick="window.location.href='index_n,i.html'; alert('Download')"><img src="./asset/img/download.png" alt="back" style="width:50%; height:50%;"></button>
+                <button class="circle-button" onclick="window.location.href='index_n,i.html'"><i class="fa-solid fa-rotate-right fa-lg" style="color: #fef9f9;"></i></button>
+                <button class="circle-button" id="btnHeart" ><i class="fa-regular fa-heart fa-lg" id="i" style="color: #fef9f9;"></i></button>
+                <button class="circle-button" onclick="window.location.href='index_n,i.html'; alert('Download')"><i class="fa-solid fa-download fa-lg" style="color: #fef9f9;"></i></button>
             </div>
         </div>
+        <script>
+            // Function to toggle heart fill
+            const heartIcon = document.getElementById('i');
+            const btnHeart = document.getElementById("btnHeart") // Get the <i> element
+                .addEventListener('click',function() {
+                if (heartIcon.classList.contains('fa-regular')) {
+                    // Change to solid (filled heart)
+                    heartIcon.classList.remove('fa-regular');
+                    heartIcon.classList.add('fa-solid');
+                    
+                } else {
+                    // Change back to regular (empty heart)
+                    heartIcon.classList.remove('fa-solid');
+                    heartIcon.classList.add('fa-regular');
+                    heartIcon.style.color = '#fef9f9'; // Revert to original color
+                }
+            })
+        </script>
     </body>
+
+
+
 </html>
+

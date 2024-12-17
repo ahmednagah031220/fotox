@@ -1,6 +1,5 @@
 // Flag variable, passed from another page 
 
-// Initialize the page based on the flag value
 window.onload = function () {
     let flag = localStorage.getItem("flag"); // Change this value to test different behaviors (0 or 1)
     const btnImg = document.getElementById("btn-img");
@@ -12,38 +11,28 @@ window.onload = function () {
     const dropdownContent = document.querySelector(".dropdown-content");
     const uploadIcon = document.getElementById("upload-icon");
     const header_text = document.getElementById('title-text');
+    const h2text = document.getElementById('h2text');
     const dropdown_icon = document.getElementById("dropdown-icon");
     const img_form = document.getElementById("img_form");
     const per_form = document.getElementById("per_form");
-
-    let uploadedFiles = []; // To store uploaded file references
-
+    
+    let uploadedFile = null;
     if (flag === "0") {
-        // Case: Imaginary  
-
-
+        // Case: Imaginary
         img_form.style.display = "block";
-        per_form.style.display = "none";
-
+        per_form.style.display = "none";  
+        image.src = "./asset/img/Fox.png";
         
 
-        image.src = "./asset/img/Fox.png";
-
-    } else if (flag === "1") {
-        // Case: Personalize
-
+    } else if (flag === "1") {       // Case: Personalize
  
         dropdownContent.style.display = "none"; 
         uploadContainer.style.display = "none"; 
         idContainer.style.display = "none";
-
         img_form.style.display = "none";
-        per_form.style.display = "block";
-
-        
-
+        per_form.style.display = "block";   
         image.src = './asset/img/person.png';
-
+        
         // Toggle dropdown visibility when clicking btn-img
         btnImg.addEventListener("click", () => {
             if (dropdownContent.style.display === "none") {
@@ -79,27 +68,46 @@ window.onload = function () {
         document.getElementById("btn-upload").addEventListener("click", () => {
             const fileInput = document.createElement("input");
             fileInput.type = "file";
-            fileInput.accept = "image/*";
-            fileInput.multiple = true; 
-            fileInput.click(); 
+            fileInput.accept = ".zip";  
+            fileInput.click();
+        
             fileInput.addEventListener("change", () => {
-                uploadedFiles = Array.from(fileInput.files); 
-                document.getElementById("upload-icon").innerHTML = '<i class="fas fa-arrow-up"></i>'; // Reset icon to upload
+                uploadedFile = fileInput.files[0]; 
+                if (uploadedFile) {
+                    const isZipFile = uploadedFile.type === "application/zip" || uploadedFile.name.endsWith(".zip");
+        
+                    if (!isZipFile) {
+                        alert("Please upload a valid .zip file.");
+                        uploadedFile = null;
+                        return;
+                    }
+
+                } else {
+                    alert("No file selected. Please upload a .zip file.");
+                }
             });
         });
-
+        
         // Handle upload-icon click
         uploadIcon.addEventListener("click", () => {
-            const numFiles = uploadedFiles.length;
+            if (!uploadedFile) {
+                alert("Please upload a .zip file first.");
+                return; 
+            }
+        
+            // Simulate processing
+            uploadIcon.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+            setTimeout(() => {
+                uploadIcon.innerHTML = '<i class="fas fa-check"></i>';
+            }, 2000); 
+        });
+        
 
-            // Validate number of files
-            if (numFiles < 15 || numFiles > 50) {
-                alert("You should upload 15-50 images");
-            } else {
-                uploadIcon.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>'; 
-                setTimeout(() => {
-                    uploadIcon.innerHTML = '<i class="fas fa-check"></i>';
-                }, 2000); // Simulate loading
+        
+        idContainer.addEventListener("click", () => {
+            const idValue = parseInt(idInput.value); // Parse the input value
+            if (idValue < 0) {
+                alert("ID should be a positive number");
             }
         });
     }

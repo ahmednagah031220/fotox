@@ -79,6 +79,7 @@ body {
     font-size: 3rem;
     margin-bottom: 0px;
     justify-content: center;
+    padding-right: 200px;
 }
 /* End Text */
 
@@ -158,7 +159,11 @@ body {
 }
 
 /* Media Queries */
-@media (max-width: 1200px) {
+
+
+
+
+@media (max-width: 1400px) {
     .wrapper {
         margin:20px !important;
         height:fit-content !important; 
@@ -203,60 +208,26 @@ body {
         color: #fff;
         font-size: 14px;
     }
-}
-@media (max-width: 768px) {
-    .wrapper {
-        margin:20px !important;
-        height:fit-content !important; 
-    }
-    .header{
-        margin-top:15px;
-    }
-    .header-image img {
-        width: 50px;
-    }
-    .header-buttons {
-        display: flex;
-        text-align: center;
-        gap: 0;
-        margin-top: 10px;
-        font-size:10px !important;
-    }
-    .remember-forgot {
-        padding-top:5px;
-        font-size: 10px;
-    }
-    .btn{
-        font-size: 15px !important; 
-    }
-    .box {
-        font-size: 30px;
-    }
-    .box-button {
-        font-size: 50%;
-    }
-    .col-md-7 {
-        display: none;
-    }
-    .wrapper {
-        width: 90%;
+    #title-text h1 {
+        font-size: 2.5rem; /* Smaller font size for tablets */
     }
 
-    #toggle-password {
-        display: flex;
-        float: right;
-        transform: translate(-10px ,-25px);
-        color: #fff;
-        font-size: 14px;
+    #title-text h2 {
+        font-size: 1.8rem; /* Smaller font size for tablets */
+        padding-right: 80px;
     }
 }
-@media (max-width: 480px) {
+
+@media (max-width: 768px) {
+    body {
+        margin-top: 40px; /* Push everything further down for extra small screens */
+    }
     .wrapper {
         margin:20px !important;
         height:fit-content !important; 
     }
     .header-image img {
-        width: 20%;
+        width: 17%;
     }
     .header-buttons {
         display: flex;
@@ -283,5 +254,18 @@ body {
         transform: translate(-10px ,-25px);
         color: #fff;
         font-size: 14px;
+    }
+    #title-text h1 {
+        font-size: 2rem; /* Smaller font size for phones */
+        padding: 40px;
+    }
+
+    #title-text h2 {
+        font-size: 1.5rem; /* Smaller font size for phones */
+        padding-right:0px ;
+    }
+    .circle {
+        width: 100%; /* Make images larger on small phones */
+        height: 100%;
     }
 }
