@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fotox</title>
+        <link rel="stylesheet" href="style_i.css">
+        <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-image">
+                <img src="./asset/img/logo.JPEG" alt="Logo">
+            </div>
+            <div class="header-buttons">
+                <button type="submit"  id="logout_button">Logout</button>
+            </div>
+        </div>
+        <div class="box">
+            <h1 class="title">Here is your Human "Foto"</h1>
+            <div class="image-box">
+                <img src="./asset/img/IMG-20241201-WA0004.jpg" alt="Sample Image">
+                <div class="ambient-light"></div>
+            </div>
+            <div class="button-container">
+                <button class="circle-button" onclick="window.location.href='index_n,i.html'"><img src="./asset/img/arrow-left.png" alt="back" style="width:50%; height:50%;"></button>
+                <button class="circle-button" onclick="window.location.href='index_n,i.html'; alert('Saved to favourite')"><img src="./asset/img/heart.png" alt="back" style="width:50%; height:50%;"></button>
+                <button class="circle-button" onclick="window.location.href='index_n,i.html'; alert('Download')"><img src="./asset/img/download.png" alt="back" style="width:50%; height:50%;"></button>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@3/dist/js.cookie.min.js"></script>
+        <script>
+         document.getElementById("logout_button").addEventListener("click", async function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        try {
+          const response = await fetch("/logout", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "CSRF-Token": Cookies.get("XSRF-TOKEN"), // Append CSRF Token
+            },
+          });
+  
+          if (!response.ok) {
+            const errorData = await response.json();
+            alert(`Error: ${errorData.error}`);   
+          } else {
+            alert(`Success: Logged out`);
+            window.location.href='/';
+
+          }
+        } catch (error) {
+          alert("An error occurred while logging out.");
+        }
+      });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="./asset/img/title.png" type="image/icon type">
+        <title>Fotox</title>
+        <link rel="stylesheet" href="style_n.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-image">
+                <img src=".\asset\img\title.png" alt="Logo">
+            </div>
+            <div class="header-buttons">
+                <button type="submit" id="logout_button">Logout</button>
+            </div>
+        </div>
+        <div class="box">
+            <h1 class="title">Here is your "Foto"</h1>
+            <div class="image-box">
+                <img src="#" alt="Sample Image" id="preview">
+                <div class="ambient-light"></div>
+            </div>
+            <div class="button-container">
+                <button class="circle-button" onclick="window.location.href='index_n,i.html'"><i class="fa-solid fa-rotate-right fa-lg" style="color: #fef9f9;"></i></button>
+                <button class="circle-button" id="btnHeart" ><i class="fa-regular fa-heart fa-lg" id="i" style="color: #fef9f9;"></i></button>
+                <button class="circle-button" onclick="downloadFile()"><i class="fa-solid fa-download fa-lg" style="color: #fef9f9;"></i></button>
+            </div>
+        </div>
+        <script>
+            // Function to toggle heart fill
+            const heartIcon = document.getElementById('i');
+            const btnHeart = document.getElementById("btnHeart") // Get the <i> element
+                .addEventListener('click',function() {
+                if (heartIcon.classList.contains('fa-regular')) {
+                    // Change to solid (filled heart)
+                    heartIcon.classList.remove('fa-regular');
+                    heartIcon.classList.add('fa-solid');
+                    
+                } else {
+                    // Change back to regular (empty heart)
+                    heartIcon.classList.remove('fa-solid');
+                    heartIcon.classList.add('fa-regular');
+                    heartIcon.style.color = '#fef9f9'; // Revert to original color
+                }
+            })
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const outputUrl = urlParams.get("outputUrl");
+
+            document.getElementById('preview').src = outputUrl;
+
+            function downloadFile() {
+                
+                const link = document.createElement("a"); // Create an invisible anchor tag
+                link.href = outputUrl; // Set the URL to the file
+    
+                // Extract file name from the URL or provide a fallback name
+                
+    
+                    fetch(outputUrl)
+                        .then((response) => 
+                        {
+                            console.log('Response:', response)
+                            return response.blob()
+                        })
+                        .then((blob) =>
+                        {
+                            console.log('Blob:', blob)
+                            const url = URL
+                            
+                            .createObjectURL(blob)
+    
+                            const link = document
+                            .createElement('a')
+                            link
+                            .href = url
+                            link
+                            .download = 'downloaded-file.jpg'
+                             // The name for the downloaded file
+                            document
+                            .body
+                            .appendChild(link)
+                            link
+                            .click()
+                            document
+                            .body
+                            .removeChild(link)
+    
+                            URL.revokeObjectURL(url)
+                        })
+                        .catch(console.error)
+                }
+        </script>
+    </body>
+
+
+
+</html>
+
