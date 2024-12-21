@@ -51,12 +51,7 @@ body {
     color: #4F378B;
     font-size: 12px;
     transition: ease 0.6s;
-    font-family: "Abhaya Libre", serif;
 }
-#get-started{
-    font-family: "Abhaya Libre", serif;
-}
-
 #sign-header:hover {
     background-color: #b889de;
     transform: scale(1.1);

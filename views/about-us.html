@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Fotox</title>
+        <link rel="icon" href=".\asset\img\title.png">
         <link rel="stylesheet" href="about-us.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,12 +21,12 @@
     <header>
         <div class="header d-flex justify-content-between align-items-center">
             <div class="header-image">
-                <a href="index.html">
+                <a href="/">
                     <img src="./asset/img/title.png" alt="Logo" class="img-fluid" />
                 </a>
             </div>
             <div class="header-buttons">
-                <button type="button" id="get-started">Log out</button> 
+                <button type="submit" id="get-started">Log out</button> 
             </div>
         </div>
     </header>
@@ -83,5 +84,32 @@
                 </div>
             </div>
         </div>
+
+
+        <script>
+            document.getElementById("get-started").addEventListener("click", async function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        try {
+        const response = await fetch("/logout", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "CSRF-Token": Cookies.get("XSRF-TOKEN"), // Append CSRF Token
+        },
+        });
+        
+        if (!response.ok) {
+        const errorData = await response.json();
+        alert(`Error: ${errorData.error}`);   
+        } else {
+        alert(`Success: Logged out`);
+        window.location.href='/';
+        
+        }
+        } catch (error) {
+        alert("An error occurred while logging out.");
+        }
+        });</script>
+            <script src="https://cdn.jsdelivr.net/npm/js-cookie@3/dist/js.cookie.min.js"></script>
     </body>
 </html>

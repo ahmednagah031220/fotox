@@ -43,6 +43,7 @@ body::after {
 
 .header-image img {
     width: 60px;
+    height: 70px;
 }
 
 .header-buttons button {
@@ -131,9 +132,6 @@ body::after {
         align-items: center;
     }
 
-    .header-image img {
-        width: 50px;
-    }
 
     .image-box {
         width: 70%;
