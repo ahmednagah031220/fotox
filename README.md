@@ -1,9 +1,3 @@
-# FOTOX
-
-Image generating model using AI.
-
-## Project Main Features
-
 1. Login
 2. Google authentication
 3. Sign up
@@ -20,7 +14,3 @@ Image generating model using AI.
 14. About us
 15. Host
 16. Testing
-
-## How To Use FOTOX
-
-Simply use the following link to access the webpage: [FOTOX](https://github.com/ahmednagah031220).

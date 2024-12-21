@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./asset/img/title.png" type="image/icon type">
+    <title>Fotox</title>
+    <link rel="stylesheet" href="style_n.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-image">
+            <a href="/">
+
+                <img src="./asset/img/logo.JPEG" alt="Logo">
+            </a>
+        </div>
+        <div class="header-buttons">
+            <button type="submit" id="logout_button">Logout</button>
+        </div>
+    </div>
+    <div class="box">
+        <h1 class="title">Here is your "Foto"</h1>
+        <div class="image-box">
+            <img id="preview" src="#" alt="Generated Image">
+            <div class="ambient-light"></div>
+        </div>
+        <div class="button-container">
+            <button class="circle-button" id="btnRegenerate"><i class="fa-solid fa-rotate-right fa-lg"
+                    style="color: #fef9f9;"></i></button>
+            <button class="circle-button" id="btnHeart"><i class="fa-regular fa-heart fa-lg" id="i"
+                    style="color: #fef9f9;"></i></button>
+            <button class="circle-button" onclick="downloadFile()"><i class="fa-solid fa-download fa-lg"
+                    style="color: #fef9f9;"></i></button>
+        </div>
+    </div>
+    <script>
+        // Function to toggle heart fill
+        const heartIcon = document.getElementById('i');
+        const btnHeart = document.getElementById("btnHeart");
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const outputUrl = urlParams.get("outputUrl");
+        const prompt = urlParams.get("prompt");
+        const model = urlParams.get("model");
+
+        const progressBarContainer = document.createElement("div");
+        const progressBar = document.createElement("div");
+
+        progressBarContainer.classList.add("progress-container");
+        progressBar.classList.add("progress-bar");
+
+        progressBarContainer.appendChild(progressBar);
+
+        document.body.appendChild(progressBarContainer);
+
+        progressBar.style.width = `${0}%`;
+        progressBarContainer.style.display = "none";
+
+        btnHeart.addEventListener("click", async function () {
+
+            const isLiked = heartIcon.classList.contains("fa-regular");
+
+            // Toggle heart icon
+            if (isLiked) {
+                heartIcon.classList.remove("fa-regular");
+                heartIcon.classList.add("fa-solid");
+                
+            } else {
+                heartIcon.classList.remove("fa-solid");
+                heartIcon.classList.add("fa-regular");
+                heartIcon.style.color = "#fef9f9"; // Change back to original color
+            }
+
+            // Send like/unlike status to the backend
+            try {
+                const response = await fetch("/like", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "CSRF-Token": Cookies.get("XSRF-TOKEN")
+                    },
+                    body: JSON.stringify({
+                        outputUrl,
+                        prompt,
+                        isLiked,
+                    }),
+                });
+
+                const data = await response.json();
+                console.log(data.message);
+            } catch (error) {
+                console.error("Error updating like status:", error);
+            }
+        });
+
+        document.getElementById('preview').src = outputUrl;
+
+        function downloadFile() {
+
+            const link = document.createElement("a"); // Create an invisible anchor tag
+            link.href = outputUrl; // Set the URL to the file
+
+            // Extract file name from the URL or provide a fallback name
+
+
+            fetch(outputUrl)
+                .then((response) => {
+                    console.log('Response:', response)
+                    return response.blob()
+                })
+                .then((blob) => {
+                    console.log('Blob:', blob)
+                    const url = URL
+
+                        .createObjectURL(blob)
+
+                    const link = document
+                        .createElement('a')
+                    link
+                        .href = url
+                    link
+                        .download = 'downloaded-file.jpg'
+                    // The name for the downloaded file
+                    document
+                        .body
+                        .appendChild(link)
+                    link
+                        .click()
+                    document
+                        .body
+                        .removeChild(link)
+
+                    URL.revokeObjectURL(url)
+                })
+                .catch(console.error)
+        }
+
+        async function checkPredictionProgress(predictionId, model_name) {
+            let polling = true;
+
+            while (polling) {
+                try {
+                    const response = await fetch(`/replicate/progress?predictionId=${predictionId}`, {
+                        method: "GET",
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Failed to fetch prediction progress.");
+                    }
+
+                    const data = await response.json();
+
+
+                    // Update UI based on the status
+                    if (data.status === "starting") {
+                        progressBar.style.width = "25%";
+                    } else if (data.status === "processing") {
+                        progressBar.style.width = "50%";
+                    } else if (data.status === "succeeded") {
+                        progressBar.style.width = "100%";
+                        console.log("Prediction succeeded:", data.output);
+
+                        const outputUrl = encodeURIComponent(data.output);
+                        const promptParam = encodeURIComponent(data.prompt); // Encode the prompt to include in the URL
+                        const model = encodeURIComponent(model_name);
+
+                        window.location.href = `/index_n?outputUrl=${outputUrl}&prompt=${promptParam}&model=${model}`;
+
+                        polling = false; // Exit the loop
+                    } else if (data.status === "failed") {
+                        progressBar.style.width = "0%";
+                        console.error("Prediction failed.");
+                        polling = false; // Exit the loop
+                    }
+
+                    // Wait 500 milliseconds before checking again
+                    await new Promise((resolve) => setTimeout(resolve, 500));
+                } catch (error) {
+                    console.error("Error checking progress:", error.message);
+                    polling = false; // Stop polling on error
+                }
+            }
+        }
+
+        btnRegenerate.addEventListener("click", async function () {
+            if (model == "null") {
+                const data = {
+                    prompt: prompt,
+                };
+                try {
+                    const response = await fetch("/replicatepredict", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "CSRF-Token": Cookies.get("XSRF-TOKEN"),
+                        },
+                        body: JSON.stringify(data),
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        alert(`Error: ${errorData.error}`);
+
+
+                    } else {
+                        const successData = await response.json();
+                        console.log(successData)
+
+                        // Call once to trigger immediately
+                        predictionId = successData.id;
+
+                        // Show progress bar container
+                        progressBarContainer.style.display = "block";
+
+                        // Call the function to check progress
+                        await checkPredictionProgress(predictionId, null);
+                        // progress bar here
+                    }
+                } catch (error) {
+                    console.error("Error submitting form:", error);
+                    alert("An error occurred.");
+                }
+            } else {
+                const data = {
+                    prompt: prompt,
+                    modelname: model
+                };
+                try {
+                    const response = await fetch("/replicatePersonalpredict", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "CSRF-Token": Cookies.get("XSRF-TOKEN"),
+                        },
+                        body: JSON.stringify(data),
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        alert(`Error: ${errorData.error}`);
+
+
+                    } else {
+                        const successData = await response.json();
+                        console.log(successData)
+
+                        // Call once to trigger immediately
+                        predictionId = successData.id;
+
+                        // Show progress bar container
+                        progressBarContainer.style.display = "block";
+
+                        // Call the function to check progress
+                        await checkPredictionProgress(predictionId, model);
+                        // progress bar here
+                    }
+                } catch (error) {
+                    console.error("Error submitting form:", error);
+                    alert("An error occurred.");
+                }
+            }
+        });
+
+    </script>
+    <script>
+        document.getElementById("logout_button").addEventListener("click", async function (e) {
+            e.preventDefault(); // Prevent the default form submission
+            try {
+                const response = await fetch("/logout", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "CSRF-Token": Cookies.get("XSRF-TOKEN"), // Append CSRF Token
+                    },
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    alert(`Error: ${errorData.error}`);
+                } else {
+                    alert(`Success: Logged out`);
+                    window.location.href = '/';
+
+                }
+            } catch (error) {
+                alert("An error occurred while logging out.");
+            }
+        });</script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3/dist/js.cookie.min.js"></script>
+    <script src="server.js"></script>
+</body>
+
+
+
+</html>

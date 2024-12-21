@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="likes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Fotox</title>
+    <link rel="icon" href=".\asset\img\title.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&display=swap"
+        rel="stylesheet">
+    <title>User Profile</title>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="/">
+
+                <img src="./asset/img/logo.JPEG" alt="Logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a id="right_btn">Log Out</a>
+            <a href="/about-us" id="my_profile">About Us</a>
+        </div>
+    </div>
+    <div class="profile-container">
+        <div class="profile-icon">
+            <img src="./asset/img/user-2.png" alt="User Icon">
+        </div>
+        <div class="user-name"></div>
+    </div>
+    <div class="liked-section">
+        <h2>
+            <div class="heart-container">
+                <img src="./asset/img/heart1.png" alt="Heart Icon" class="heart-icon">
+            </div>
+            liked
+        </h2>
+        <ul class="liked-list">
+        </ul>
+    </div>
+    <script>
+        document.getElementById("right_btn").addEventListener("click", async function (e) {
+            e.preventDefault(); // Prevent the default form submission
+            try {
+                const response = await fetch("/logout", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "CSRF-Token": Cookies.get("XSRF-TOKEN"), // Append CSRF Token
+                    },
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    alert(`Error: ${errorData.error}`);
+                } else {
+                    alert(`Success: Logged out`);
+                    window.location.href = '/';
+
+                }
+            } catch (error) {
+                alert("An error occurred while logging out.");
+            }
+        });</script>
+    <script>
+
+        async function fetchLikes() {
+            try {
+                const response = await fetch("/get_likes");
+                if (!response.ok) throw new Error("Failed to fetch likes");
+
+                const data = await response.json();
+
+                // Update username
+                document.querySelector(".user-name").textContent = data.uname;
+
+                // Update likes list
+                const likesList = document.querySelector(".liked-list");
+                likesList.innerHTML = ""; // Clear the list first
+
+                if (data.likes.length === 0) {
+                    likesList.innerHTML = "<li>No likes found</li>";
+                    return;
+                }
+
+                data.likes.forEach((like) => {
+                    const listItem = document.createElement("li");
+                    listItem.innerHTML = `<a href="${like.outputUrl}" target="_blank">${like.prompt}</a>`;
+                    likesList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error("Error fetching likes:", error);
+            }
+        }
+
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            fetchLikes();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3/dist/js.cookie.min.js"></script>
+</body>
+
+</html>
