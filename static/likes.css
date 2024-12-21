@@ -26,9 +26,13 @@ body {
 }
 
 .logo img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 70px;
     margin-right: 10px;
+    transition: ease 0.6s;
+}
+.logo img:hover {
+    transform: scale(1.1);
 }
 
 .logo span {
@@ -61,6 +65,7 @@ body {
 
 .nav-links a:hover {
     background-color: #4F378B;
+    
 }
 
 .nav-links #right_btn:hover {
@@ -168,6 +173,21 @@ body {
     margin: 5px auto 0; /* Automatically center the line */
 }
 
+
+.liked-list a {
+    color: white; /* Default link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.liked-list a:hover {
+    color: #4F378B; /* Change color on hover */
+}
+
+/* Additional styles for the liked list if needed */
+.liked-list {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
 
 
 

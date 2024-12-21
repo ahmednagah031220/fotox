@@ -32,7 +32,7 @@
             </div>
             <div class="header-buttons d-flex gap-3 justify-content-end">
                 <!-- NOTE: link to the log in page -->
-                <button type="submit" class="btn" id="likes_button">Likes</button>
+                <button type="submit" class="btn" id="likes_button" onclick="window.location.href = 'likes';">Likes</button>
                 <button type="submit" class="btn" id="logout_button">Log out</button>
             </div>
         </div>
@@ -47,20 +47,19 @@
             </div>
             <div class="box row align-items-center ">
                 <div class="input-box col-lg-5 col-md-9 col-sm-9 col-9 d-flex justify-content-center order-lg-1 order-2 mb-3 offset-1">
-                    <form action="/per_req" method="POST" id="per_form">
+                    <form action="" method="POST" id="per_form">
                         <div class="input-box-container">
                             <div class="dropdown">
                             <button type="button" class="btn" id="btn-img">Person<i class="fa-solid fa-caret-down fa-s" style="color: #fff;"></i></button>
                             <!--NOTE ADJUST NUMBER OF PHOTOS BASED ON HOW MANY ARE THERE IN THE DATABASE--> 
                                 <div class="dropdown-content">
-                                    <a href="#">photo 1</a>
-                                    <a href="#">photo 2</a>
+                                    <!-- <a href="#">name</a> -->
                                     <a href="#">create new</a>
                                 </div>
                             </div>
 
-                            <input type="text" name="per_promot" placeholder="Prompt Here" required>
-                            <button type="button" class="btn" id="per_crystal"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
+                            <input type="text" name="per_prompt" id="training-name" placeholder="What do you want to generate?" required>
+                            <button type="submit" class="btn" id="per_crystal"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
                                 
                         </div> 
 
@@ -68,17 +67,14 @@
                             <button type="button" class="btn" id="btn-upload">upload pics</button> 
                             <button type="button" class="btn" id="upload-icon"><i class="fa-solid fa-cloud-arrow-up fa-2xs" style="color: #3b2968;"></i></button>
                         </div>
-                        <div class="id-container">
-                            <button type="button" class="btn" id="btn-id">ID</button> 
-                            <input type="number" placeholder="Enter picture ID (optional)">
-                        </div>
+                        
                     </form> 
                     <!-- Splitting the form into two rather than one-->
-                    <form action="/img_req" method="POST" id="img_form">
+                    <form method="POST" id="img_form">
                     <div class="input-box-container">
                         <button type="button" class="btn" id="btn-img">Imaginary</button>
-                        <input type="text" name="img_promot" placeholder="Prompt Here" required>
-                        <button type="button" class="btn" id="img_crystal"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
+                        <input type="text" name="img_prompt" placeholder="What do you want to generate?" required>
+                        <button type="submit" class="btn" id="img_crystal"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
                     </div>   
                     </form>                     
                 </div>
@@ -89,7 +85,6 @@
             </div>
         </div>
             <!-- Link the JS file -->
-            <script src="fotox.js" type="module"></script>
             <script src="script.js" type="module"></script>
             <script>
                 document.getElementById("logout_button").addEventListener("click", async function (e) {
@@ -115,7 +110,6 @@
             alert("An error occurred while logging out.");
         }
     });</script>
-
             <script src="fotox.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/js-cookie@3/dist/js.cookie.min.js"></script>
             <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

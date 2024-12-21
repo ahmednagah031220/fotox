@@ -17,8 +17,8 @@ body {
     height: 50px;
 }
 .header-image img {
-    width: 5%;
-    height: auto;
+    width: 60px;
+    height: 70px;
     padding-top: 3%;
     transition: ease 0.6s;
 }
@@ -71,15 +71,21 @@ body {
 }
 
 #title-text h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 0rem;
+    float: left;
+    padding-right: 10px;
+    padding-left: 75px;
 }
 
 #title-text h2 {
-    font-size: 3rem;
+    font-size: 2.3rem;
     margin-bottom: 0px;
     justify-content: center;
     padding-right: 200px;
+    float: left;
+    padding-left: 100px;
+
 }
 /* End Text */
 
@@ -134,6 +140,7 @@ body {
     font-size: 12px;
     border: none;
     transition: ease 0.6s;
+    font-family: "DM Serif Text", serif;
 }
 
 .circle-button:hover {
@@ -171,9 +178,6 @@ body {
     .header{
         margin-top:15px;
     }
-    .header-image img {
-        width: 50px;
-    }
     .header-buttons {
         display: flex;
         text-align: center;
@@ -210,11 +214,13 @@ body {
     }
     #title-text h1 {
         font-size: 2.5rem; /* Smaller font size for tablets */
+        padding-left: 0;
     }
 
     #title-text h2 {
         font-size: 1.8rem; /* Smaller font size for tablets */
         padding-right: 80px;
+        padding-left: 20px;
     }
 }
 
@@ -226,9 +232,7 @@ body {
         margin:20px !important;
         height:fit-content !important; 
     }
-    .header-image img {
-        width: 17%;
-    }
+
     .header-buttons {
         display: flex;
         text-align: center;

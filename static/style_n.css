@@ -13,16 +13,25 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Center items vertically */
-    flex-wrap: nowrap; /* Prevent wrapping */
+    align-items: center;
+    /* Center items vertically */
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
     padding: 20px;
     background-color: #000;
     color: #4F378B;
-    gap: 20px; /* Maintain spacing */
+    gap: 20px;
+    /* Maintain spacing */
 }
 
 .header-image img {
     width: 60px;
+    height: 70px;
+    transition: ease 0.6s;
+}
+
+.header-image img:hover {
+    transform: scale(1.1);
 }
 
 .header-buttons button {
@@ -50,7 +59,7 @@ body {
 .title {
     font-size: 1.8rem;
     color: #f5f5f5;
-    margin-bottom: 10px;
+    margin-top: 4px;
 }
 
 /* Image Box */
@@ -103,17 +112,19 @@ body {
 /* Media Queries */
 @media screen and (max-width: 768px) {
     .header {
-        flex-direction: row; /* Keep in a row on small screens */
-        justify-content: space-between; /* Proper spacing */
-        padding: 10px; /* Reduce padding */
+        flex-direction: row;
+        /* Keep in a row on small screens */
+        justify-content: space-between;
+        /* Proper spacing */
+        padding: 10px;
+        /* Reduce padding */
     }
 
-    .header-image img {
-        width: 50px;
-    }
+
 
     .header-buttons button {
-        padding: 8px 15px; /* Reduce button size */
+        padding: 8px 15px;
+        /* Reduce button size */
     }
 
     .image-box {
@@ -122,7 +133,8 @@ body {
     }
 
     .button-container {
-        gap: 40px; /* Reduce gap for buttons */
+        gap: 40px;
+        /* Reduce gap for buttons */
     }
 
     .circle-button {
@@ -130,4 +142,23 @@ body {
         height: 40px;
         font-size: 12px;
     }
+}
+
+.progress-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+    height: 5px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4F378B;
+    width: 0%;
+    transition: width 0.1s;
 }

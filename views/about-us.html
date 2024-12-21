@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fotox</title>
+        <link rel="icon" href=".\asset\img\title.png">
+        <link rel="stylesheet" href="about-us.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lustria&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="./asset/img/logo.png" type="image/icon type">
+        <link href='https://fonts.googleapis.com/css?family=Noto+Rashi+Hebrew' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"></script>
+    </head>
+    <header>
+        <div class="header d-flex justify-content-between align-items-center">
+            <div class="header-image">
+                <a href="/">
+                    <img src="./asset/img/title.png" alt="Logo" class="img-fluid" />
+                </a>
+            </div>
+            <div class="header-buttons">
+                <button type="submit" id="get-started">Log out</button> 
+            </div>
+        </div>
+    </header>
+    <body>
+        <div class="box container">
+            <!-- Row for the first set of people -->
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-4 text-center">
+                    <h3>Kareem Yasser Mazrou</h3>
+                    <a href="mailto:kareem.mazrou@ejust.edu.eg" class="mail"><i class="fa-solid fa-envelope fa-sm" style="color: #4F378B; padding-right:2%;"></i>kareem.mazrou@ejust.edu.eg</a>
+                    <div class="social col d-flex justify-content-center">
+                        <a target="_blank" href="https://www.facebook.com/kareem.mazrou"><i class="fa-brands fa-facebook fa-2xl" style="color: #4F378B;"></i></a>
+                        <a target="_blank" href="https://github.com/kareemmazrou01"><i class="fa-brands fa-github fa-2xl" style="color: #4F378B; "></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/kareem-mazrou/"><i class="fa-brands fa-linkedin fa-2xl" style="color: #4F378B;"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <h3>Shiref Ashraf Mohamed</h3>
+                    <a href="mailto:shiref.ashraf@ejust.edu.eg" class="mail"><i class="fa-solid fa-envelope fa-sm" style="color: #4F378B; padding-right:2%;"></i>shiref.ashraf@ejust.edu.eg</a>
+                    <div class="social col d-flex justify-content-center">
+                        <a target="_blank" href="https://www.facebook.com/shirefashraff/"><i class="fa-brands fa-facebook fa-2xl" style="color: #4F378B;"></i></a>
+                        <a target="_blank" href="https://github.com/shiref-ashraf"><i class="fa-brands fa-github fa-2xl" style="color: #4F378B;"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/shiref/"><i class="fa-brands fa-linkedin fa-2xl" style="color: #4F378B;"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <h3>Ahmed Nagah Ramadan</h3>
+                    <a href="mailto:ahmed.nagah@ejust.edu.eg" class="mail"><i class="fa-solid fa-envelope fa-sm" style="color: #4F378B; padding-right:2%;"></i>ahmed.nagah@ejust.edu.eg</a>
+                    <div class="social col d-flex justify-content-center">
+                        <a target="_blank" href="https://www.facebook.com/a7med.nag.03/"><i class="fa-brands fa-facebook fa-2xl" style="color: #4F378B;"></i></a>
+                        <a target="_blank" href="https://github.com/ahmednagah031220"><i class="fa-brands fa-github fa-2xl" style="color: #4F378B;"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/ahmed-nagah-42038a262/"><i class="fa-brands fa-linkedin fa-2xl" style="color: #4F378B;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Row for the second set of people -->
+            <div class="lower row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-6 text-center">
+                    <h3>Tasbih Othman Neamatalla</h3>
+                    <a href="mailto:tasbih.neamatalla@ejust.edu.eg" class="mail"><i class="fa-solid fa-envelope fa-sm" style="color: #4F378B; padding-right:2%;"></i>tasbih.neamatalla@ejust.edu.eg</a>
+                    <div class="social col d-flex justify-content-center">
+                        <a target="_blank" href="https://www.facebook.com/share/183bShfcZk/"><i class="fa-brands fa-facebook fa-2xl" style="color: #4F378B;"></i></a>
+                        <a target="_blank" href="https://github.com/tasbeeh04"><i class="fa-brands fa-github fa-2xl" style="color: #4F378B;"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/tasbih-neamatalla"><i class="fa-brands fa-linkedin fa-2xl" style="color: #4F378B;"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 text-center" id="jana">
+                    <h3>Jana Mohamed Elsalhy</h3>
+                    <a href="mailto:jana.elsalhy@ejust.edu.eg" class="mail"><i class="fa-solid fa-envelope fa-sm" style="color: #4F378B; padding-right:2%;"></i>jana.elsalhy@ejust.edu.eg</a>
+                    <div class="social col d-flex justify-content-center">
+                        <a target="_blank" href="https://www.facebook.com/share/18intyPoRt/?mibextid=wwXIfr"><i class="fa-brands fa-facebook fa-2xl" style="color: #4F378B;"></i></a>
+                        <a target="_blank" href="https://github.com/Jana10101"><i class="fa-brands fa-github fa-2xl" style="color: #4F378B;"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/jana-elsalhy-306101285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fa-brands fa-linkedin fa-2xl" style="color: #4F378B;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            document.getElementById("get-started").addEventListener("click", async function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        try {
+        const response = await fetch("/logout", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "CSRF-Token": Cookies.get("XSRF-TOKEN"), // Append CSRF Token
+        },
+        });
+        
+        if (!response.ok) {
+        const errorData = await response.json();
+        alert(`Error: ${errorData.error}`);   
+        } else {
+        alert(`Success: Logged out`);
+        window.location.href='/';
+        
+        }
+        } catch (error) {
+        alert("An error occurred while logging out.");
+        }
+        });</script>
+            <script src="https://cdn.jsdelivr.net/npm/js-cookie@3/dist/js.cookie.min.js"></script>
+    </body>
+</html>
