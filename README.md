@@ -17,8 +17,9 @@ Image generating model using AI.
 11. Log out
 12. Cookies
 13. Remember me
-14. Footer
+14. About us
 15. Host
+16. Testing
 
 ## How To Use FOTOX
 
