@@ -14,7 +14,8 @@ Image generating model using AI.
 11. Log out
 12. Cookies
 13. Remember me
-14. Footer
+14. About Us
 15. Host
+16. Testing
 ## How To Use FOTOX
 Simply use the following link to access the webpage: [FOTOX](https://github.com/ahmednagah031220).
