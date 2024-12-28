@@ -10,10 +10,10 @@ FOTOX is an innovative platform that leverages artificial intelligence to genera
 ## 🛠️ Technologies Used  
 
 <div align="center">
-  <a href="https://www.figma.com/design/Bri8glv2hDBSWfwp0jnlq9/project-design?node-id=0-1&t=9MsqJZcIpBPzalPc-1" target="_blank">
+  <a href="https://www.figma.com/design/Bri8glv2hDBSWfwp0jnlq9/project-design?node-id=0-1&t=9MsqJZcIpBPzalPc-1" target="_blank" rel="noopener noreferrer">
     <img width="50" src="https://user-images.githubusercontent.com/25181517/189715289-df3ee512-6eca-463f-a0f4-c10d94a06b2f.png" alt="Figma" title="Figma"/>
   </a>
-  <a href="https://www.canva.com/design/DAGaa02H82E/XDfRkFu9Z1PCxjSsmjxFmw/edit?utm_content=DAGaa02H82E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+  <a href="https://www.canva.com/design/DAGaa02H82E/XDfRkFu9Z1PCxjSsmjxFmw/edit?utm_content=DAGaa02H82E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">
     <img width="50" src="https://github-production-user-asset-6210df.s3.amazonaws.com/136815194/253220886-02494c7c-de6a-43a6-9293-6369696842ed.png" alt="Canva" title="Canva"/>
   </a>
 	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png" alt="HTML" title="HTML"/></code>
@@ -74,6 +74,6 @@ FOTOX is an innovative platform that leverages artificial intelligence to genera
 7. Open `localhost:3000` in your browser to start generating fantastic images.  
 
 ## 🔗 Access FOTOX  
-1. Experience FOTOX by visiting [FOTOX Website](https://fotoxweb.emeint.online/).
-2. Easy access to UI Design [Design](https://www.figma.com/design/Bri8glv2hDBSWfwp0jnlq9/project-design?node-id=0-1&t=9MsqJZcIpBPzalPc-1)
-3. Access [Canva](https://www.canva.com/design/DAGaa02H82E/XDfRkFu9Z1PCxjSsmjxFmw/edit?utm_content=DAGaa02H82E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+1. Experience FOTOX by visiting <a href="https://fotoxweb.emeint.online/" target="_blank" rel="noopener noreferrer">FOTOX Website</a>.
+2. Easy access to UI Design <a href="https://www.figma.com/design/Bri8glv2hDBSWfwp0jnlq9/project-design?node-id=0-1&t=9MsqJZcIpBPzalPc-1" target="_blank" rel="noopener noreferrer">Design</a>.
+3. Access <a href="https://www.canva.com/design/DAGaa02H82E/XDfRkFu9Z1PCxjSsmjxFmw/edit?utm_content=DAGaa02H82E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">Canva</a>.
