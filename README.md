@@ -31,7 +31,7 @@ FOTOX is an innovative platform that leverages artificial intelligence to genera
 
 ## ✨ Key Features  
 1. Login  
-2. Google authentication  
+2. Google authentication
 3. Sign up  
 4. Forget password  
 5. Imaginary  
@@ -45,7 +45,8 @@ FOTOX is an innovative platform that leverages artificial intelligence to genera
 13. Remember me  
 14. About Us  
 15. Host  
-16. Testing  
+16. Testing
+17. 
 
 ## 🛠️ How to Run This Web App  
 1. Install Node.js on your system.  
@@ -74,3 +75,5 @@ FOTOX is an innovative platform that leverages artificial intelligence to genera
 
 ## 🔗 Access FOTOX  
 Experience FOTOX by visiting [FOTOX Website](https://fotoxweb.emeint.online/).
+Easy access to UI Design [Design](https://www.figma.com/design/Bri8glv2hDBSWfwp0jnlq9/project-design?node-id=0-1&t=9MsqJZcIpBPzalPc-1)
+Access [Canva](https://www.canva.com/design/DAGaa02H82E/XDfRkFu9Z1PCxjSsmjxFmw/edit?utm_content=DAGaa02H82E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
