@@ -47,5 +47,30 @@ FOTOX is an innovative platform that leverages artificial intelligence to genera
 15. Host  
 16. Testing  
 
+## 🛠️ How to Run This Web App  
+1. Install Node.js on your system.  
+2. Run the following command to install the necessary dependencies:  
+   ```bash
+   npm install
+   ```  
+3. Create a `.env` file in the app folder.  
+4. In the `.env` file, add the following configurations:  
+   ```
+   REPLICATE_API_KEY=your-replicate-api-key
+   REPLICATE_TOKEN=your-replicate-token
+   HUGGING_FACE_API_KEY=your-hugging-face-api-key
+   HUGGING_FACE_TOKEN=your-hugging-face-token
+   FIREBASE_CONFIG_DATA=your-firebase-config-data
+   ```
+5. Install the required libraries:  
+   ```bash
+   npm install axios fs path multer express body-parser csrf cookie-parser replicate
+   ```
+6. Run the application with the following command:  
+   ```bash
+   npm start
+   ```
+7. Open `localhost:3000` in your browser to start generating fantastic images.  
+
 ## 🔗 Access FOTOX  
 Experience FOTOX by visiting [FOTOX Website](https://fotoxweb.emeint.online/).
