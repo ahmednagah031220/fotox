@@ -18,4 +18,4 @@ Image generating model using AI.
 15. Host
 16. Testing
 ## How To Use FOTOX
-Simply use the following link to access the webpage: [FOTOX](https://github.com/ahmednagah031220).
+Simply use the following link to access the webpage: [FOTOX](https://fotoxweb.emeint.online/).
