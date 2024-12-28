@@ -46,7 +46,7 @@ FOTOX is an innovative platform that leverages artificial intelligence to genera
 14. About Us  
 15. Host  
 16. Testing
-17. 
+17. UI Figma Design
 
 ## 🛠️ How to Run This Web App  
 1. Install Node.js on your system.  
