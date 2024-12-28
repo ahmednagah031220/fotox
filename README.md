@@ -1,5 +1,5 @@
 <div align="center">
-  # FOTOX
+  <h>FOTOX</h>
 </div>
 <div align="center">
   # Technologies Used
