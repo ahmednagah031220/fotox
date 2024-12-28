@@ -1,8 +1,8 @@
-# Warning
-## Keep low profile
-### Trojan Landmines
-
 <div align="center">
+  # FOTOX
+</div>
+<div align="center">
+  # Technologies Used
 	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192108372-f71d70ac-7ae6-4c0d-8395-51d8870c2ef0.png" alt="Git" title="Git"/></code>
 	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png" alt="HTML" title="HTML"/></code>
 	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192108374-8da61ba1-99ec-41d7-80b8-fb2f7c0a4948.png" alt="GitHub" title="GitHub"/></code>
@@ -14,3 +14,23 @@
 	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" alt="Node.js" title="Node.js"/></code>
 	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192158606-7c2ef6bd-6e04-47cf-b5bc-da2797cb5bda.png" alt="bash" title="bash"/></code>
 </div>
+Image generating model using AI.
+## Project Main Features
+1. Login
+2. Google authentication
+3. Sign up
+4. Forget password
+5. Imaginary
+6. Like
+7. Download
+8. Regenerate
+9. Human
+10. Upload pics
+11. Log out
+12. Cookies
+13. Remember me
+14. About Us
+15. Host
+16. Testing
+## How To Use FOTOX
+Simply use the following link to access the webpage: [FOTOX](https://fotoxweb.emeint.online/).
