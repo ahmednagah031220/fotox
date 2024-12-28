@@ -23,11 +23,22 @@ FOTOX is an innovative platform that leverages artificial intelligence to genera
 </div>
 
 ## ✨ Key Features  
-- **User Authentication:** Login, Sign up, Google authentication, and "Remember Me" functionality.  
-- **Password Management:** Password recovery via "Forget Password" feature.  
-- **Image Management:** Upload, regenerate, like, and download images with ease.  
-- **User Experience:** "About Us" section, cookie management, and hosting support.  
-- **Testing and Quality Assurance:** Ensure high performance and reliability.  
+1. Login  
+2. Google authentication  
+3. Sign up  
+4. Forget password  
+5. Imaginary  
+6. Like  
+7. Download  
+8. Regenerate  
+9. Human  
+10. Upload pics  
+11. Log out  
+12. Cookies  
+13. Remember me  
+14. About Us  
+15. Host  
+16. Testing  
 
 ## 🔗 Access FOTOX  
 Experience FOTOX by visiting [FOTOX Website](https://fotoxweb.emeint.online/).
