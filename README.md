@@ -74,6 +74,5 @@ FOTOX is an innovative platform that leverages artificial intelligence to genera
 7. Open `localhost:3000` in your browser to start generating fantastic images.  
 
 ## 🔗 Access FOTOX  
-1. Experience FOTOX by visiting <a href="https://fotoxweb.emeint.online/" target="_blank" rel="noopener noreferrer">FOTOX Website</a>.
-2. Easy access to UI Design <a href="https://www.figma.com/design/Bri8glv2hDBSWfwp0jnlq9/project-design?node-id=0-1&t=9MsqJZcIpBPzalPc-1" target="_blank" rel="noopener noreferrer">Design</a>.
-3. Access <a href="https://www.canva.com/design/DAGaa02H82E/XDfRkFu9Z1PCxjSsmjxFmw/edit?utm_content=DAGaa02H82E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">Canva</a>.
+1. Easy access to UI Design <a href="https://www.figma.com/design/Bri8glv2hDBSWfwp0jnlq9/project-design?node-id=0-1&t=9MsqJZcIpBPzalPc-1" target="_blank" rel="noopener noreferrer">Design</a>.
+2. Access <a href="https://www.canva.com/design/DAGaa02H82E/XDfRkFu9Z1PCxjSsmjxFmw/edit?utm_content=DAGaa02H82E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">Canva</a>.
