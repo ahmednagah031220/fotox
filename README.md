@@ -75,4 +75,3 @@ FOTOX is an innovative platform that leverages artificial intelligence to genera
 
 ## 🔗 Access FOTOX  
 1. Easy access to UI Design <a href="https://www.figma.com/design/Bri8glv2hDBSWfwp0jnlq9/project-design?node-id=0-1&t=9MsqJZcIpBPzalPc-1" target="_blank" rel="noopener noreferrer">Design</a>.
-2. Access <a href="https://www.canva.com/design/DAGaa02H82E/XDfRkFu9Z1PCxjSsmjxFmw/edit?utm_content=DAGaa02H82E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">Canva</a>.
