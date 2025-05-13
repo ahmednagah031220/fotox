@@ -7,7 +7,7 @@
 ## 🚀 Overview  
 FOTOX is an innovative platform that leverages artificial intelligence to generate stunning images tailored to your needs. Explore features like image regeneration, uploads, downloads, and more with a user-friendly interface and seamless functionality.
 
-## 🛠️ Technologies Used  
+## 🛠️ Technologies Used 
 
 <div align="center">
   <a href="https://www.figma.com/design/Bri8glv2hDBSWfwp0jnlq9/project-design?node-id=0-1&t=9MsqJZcIpBPzalPc-1" target="_blank" rel="noopener noreferrer">
